@@ -245,9 +245,12 @@ export default function App() {
               <p className="max-w-xl text-base text-teak-700 sm:text-lg">{t.heroDescription}</p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <button className="w-full rounded-full bg-lacquer-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto">
+              <a
+                href="#reservation"
+                className="w-full rounded-full bg-lacquer-500 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto"
+              >
                 {t.reserveCta}
-              </button>
+              </a>
               <a
                 href="#menu"
                 className="w-full rounded-full border border-teak-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:w-auto"
