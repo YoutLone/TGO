@@ -43,7 +43,8 @@ export default {
       },
       fontFamily: {
         display: ["Fraunces", "serif"],
-        body: ["Manrope", "system-ui", "sans-serif"]
+        body: ["Manrope", "system-ui", "sans-serif"],
+        myanmar: ["Noto Serif Myanmar", "serif"]
       },
       boxShadow: {
         glow: "0 20px 60px -20px rgba(248, 48, 48, 0.45)",

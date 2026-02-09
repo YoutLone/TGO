@@ -1,125 +1,230 @@
 import React from "react";
+import MenuSection from "./components/MenuSection.jsx";
 
-const menuItems = [
-  {
-    name: "တောင်ငူ မုန့်ဟင်းခါး (မုံဟင်းခါး)",
-    price: "4,500 ကျပ်",
-    description:
-      "ငါးရည်အရသာနက်နက်ကို ချည်မျှင်ဆန်နွယ်နဲ့ချက်ပြီး ကြော်ဖက်၊ ပင်စည်ငှက်ပျော၊ သံပုရာနဲ့ သစ်သီးအရသာပေးထားပါတယ်။",
-    rating: 4.9,
-    spice: "အလယ်အလတ်",
-    category: "ခေါက်ဆွဲ",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Myanmar%E2%80%99s_Traditional_Food_-_Mohinga.jpg",
-    gradient: "from-lacquer-500/70 via-teak-500/70 to-jade-500/70"
+const content = {
+  my: {
+    languageLabel: "ဘာသာ",
+    tag: "တောင်ငူမြို့ • မြန်မာရိုးရာအစားအစာ",
+    heroTitle: "တောင်ငူ မုန့်ဟင်းခါး",
+    heroSubtitle: "\"ခေတ်သစ်စားသုံးသူတို့ရဲ့ အကြိုက်နဲ့အညီ အထူးစီမံဖန်တီးထားပါသည်\"",
+    heroDescription:
+      "\"တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ\"",
+    reserveCta: "စားပွဲခုံကြိုတင်ချိန်း",
+    viewMenu: "မီနူးကြည့်ရန်",
+    hoursLabel: "ဆိုင်ဖွင့်ချိန်",
+    hoursValue: "မနက် 6:30 – ည 9:30",
+    locationLabel: "ဆိုင်လိပ်စာ",
+    locationValue:
+      "မန္တလေးလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ်  မြောက်ဒဂုံမြို့နယ် ရန်ကုန်",
+    deliveryLabel: "ပို့ဆောင်မှု",
+    deliveryValue: "၅ ကီလိုမီတာအတွင်း ရရှိနိုင်",
+    featuredLabel: "အထူးမီနူး",
+    featuredTitle: "မုန့်ဟင်းခါး ပန်းကန်",
+    featuredDesc: "ငါးရည်ကို အချိန်ကြာကြာချက်ပြီး ကြော်ဖက်၊ အစိမ်းရနံ့နဲ့ အနူးညံ့အရသာ။",
+    storyTag: "ကျွန်ုပ်တို့အကြောင်း",
+    storyTitle: "တောင်ငူအငွေ့အသက်၊ ခေတ်သစ်လက်ရာ",
+    storyBody:
+      "တောင်ငူရဲ့ ရိုးရာနံနက်ခင်း အရသာတွေဖြစ်တဲ့ မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်နဲ့ ဒေသထွက် အဆာပြေစာတွေကို ခေတ်ပေါ် စားသောက်မှုအတွေ့အကြုံသစ်နဲ့အတူ ခံစားလိုက်ပါ",
+    chefNoteLabel: "ချက်ပြုတ်သူမှတ်စု",
+    chefNote:
+      "“မွှေးပျံ့တဲ့ ရနံ့၊ ပြည်စုံတဲ့ အရသာနဲ့အတူ နွေးထွေးတဲ့ အိမ်ရဲ့အမှတ်တရတွေကို ဖော်ဆောင်ပေးမယ့် ဟင်းတစ်ခွက်”",
+    chefName: "Chef: Khin Lay, တောင်ငူ",
+    highlights: [
+      {
+        title: "တောင်ငူအမွေအနှစ်",
+        text: "တောင်ငူနဲ့ ဗဂိုအရသာကို အိမ်သမားလက်နဲ့ ဆက်ခံလာတဲ့ ပုံစံအတိုင်း ချက်ပြုတ်ထားပါတယ်။",
+        accent: "bg-lacquer-100 text-lacquer-700"
+      },
+      {
+        title: "မနက်ချိန်အရသာ",
+        text: "မနက်ခင်းကတည်းက ငါးအရိုး၊ အစိမ်းပင်ဆီလိပ်၊ အမွှေးအကြိုင်နဲ့ တဖြည်းဖြည်းချက်ထားပါတယ်။",
+        accent: "bg-jade-100 text-jade-700"
+      },
+      {
+        title: "အပူချိန်ကိုလိုက်ဖက်",
+        text: "နူးညံ့တဲ့အပူကနေ စပ်ပြင်းတဲ့အပူအထိ သင့်တော်အောင်ညှိပေးထားပါတယ်။",
+        accent: "bg-teak-100 text-teak-700"
+      }
+    ],
+    gallery: [
+      { label: "မနက်စျေးကွက်", gradient: "from-jade-600/80 via-teak-400/80 to-lacquer-500/80" },
+      { label: "ဟင်းရည်အမှတ်တရ", gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80" },
+      { label: "လက်ဖက်အခမ်းအနား", gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80" }
+    ],
+    experienceTag: "စားသောက်မှုအတွေ့အကြုံ",
+    experienceTitle: "ရိုးရာနဲ့ခေတ်မီအလှဆင်။",
+    experienceBody:
+      "အလင်းရောင်နူးညံ့မှု၊ လက်ကာအလှဆင်မှုနဲ့ ဟင်းရည်ချက်နေရာဖွင့်ထားတဲ့ စားသောက်ခန်းက တောင်ငူရဲ့ အရသာကို တိုက်ရိုက်ခံစားနိုင်ပါတယ်။",
+    experienceFeatures: ["ဟင်းရည်ချက်နေရာ", "လက်ဖက်ဘား", "မိသားစုအခန်း"],
+    ratingLabel: "ယနေ့အဆင့်သတ်မှတ်",
+    ratingText: "အသိုင်းအဝိုင်းအဆင့်သတ်မှတ်မှု 1,240 ခုပေါ်မူတည်",
+    ratingMetrics: [
+      { label: "ဟင်းရည်အနံ့အရသာ", value: "98%" },
+      { label: "အနံ့ညှိမှု", value: "96%" },
+      { label: "ဝန်ဆောင်မှု", value: "95%" }
+    ],
+    weeklyLabel: "အပတ်စဉ်အထူး",
+    weeklyTitle: "တောင်ငူအမွေအနှစ်ပွဲ",
+    weeklyBody: "မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်၊ ကြက်အုန်းနို့ဟင်း — ညွှန်ပြချက်သင်္ကန်ခြောက်ဖက်နဲ့။",
+    weeklyCta: "ကြိုတင်မှာယူရန်",
+    reservationTag: "ကြိုတင်ချိန်းဆိုမှု",
+    reservationTitle: "ဖုန်းခေါ်ပြီး ကြိုတင်ချိန်းနိုင်ပါသည်။",
+    reservationBody:
+      "ယခုအချိန်မှာ ဖုန်းနဲ့သာ ကြိုတင်ချိန်းနိုင်ပါတယ်။ ဖုန်းခေါ်လိုက်တာနဲ့ အချိန်တိုအတွင်း အတည်ပြုပါမယ်။ လူနည်းအုပ်စုများအတွက် လက်ရှိအချိန်လာရောက်လည်း အဆင်ပြေပါတယ်။",
+    callLabel: "ဖုန်းခေါ်ရန်",
+    callCta: "ယခုဖုန်းခေါ်ရန်",
+    formTag: "နမူနာဖောင်",
+    formTitle: "အလွယ်တကူ ကြိုတင်ဖောင်",
+    formPlaceholders: {
+      name: "အမည် အပြည့်အစုံ",
+      date: "နေ့ရက်",
+      time: "အချိန်",
+      guests: "လူအရေအတွက်",
+      phone: "ဖုန်းနံပါတ်",
+      note: "မှတ်ချက် (မလိုအပ်ပါက ကျန်ထားနိုင်)"
+    },
+    formSubmit: "တင်သွင်းရန်",
+    formHint: "ဤဖောင်သည် နမူနာသာ ဖြစ်သည်။ ဖုန်းဖြင့်သာ အတည်ပြုနိုင်ပါသည်။",
+    footerTitle: "တောင်ငူ မုန့်ဟင်းခါး",
+    footerBody: "ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့မှာ အစစ်အမှန် မြန်မာအရသာကိုခံစားပါ။",
+    footerCredit: "မူရင်းနောက်ခံဓာတ်ပုံ: Taungoo city (Wikimedia Commons)",
+    contactLabel: "ဆက်သွယ်ရန်",
+    addressLabel: "လိပ်စာ",
+    addressValue: "မြောက်ဒဂုံမြို့နယ်၊ ရန်ကုန်",
+    addressLine2: "ရာဇာဓိရာဇ်လမ်းအနီး",
+    mapTag: "တည်နေရာ",
+    mapTitle: "ဆိုင်တည်နေရာကို ရှာရန်",
+    mapBody: "မြေပုံကိုနှိပ်ပြီး KHIN LAY သို့ လမ်းညွှန်ချက်ရယူပါ။",
+    mapLinkLabel: "Google Maps ဖွင့်ရန်"
   },
-  {
-    name: "ရှမ်းတိုဖူး သုပ်",
-    price: "3,200 ကျပ်",
-    description:
-      "ပဲသားဖြစ်တဲ့ တိုဖူးကို ကြက်သွန်ဆီ၊ မြေပဲကြော်နဲ့ စိမ့်သီးအရသာနဲ့ သုပ်ထားပါတယ်။",
-    rating: 4.7,
-    spice: "မစပ်",
-    category: "သုပ်မျိုးစုံ",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/ToFu_Salad.jpg",
-    gradient: "from-jade-500/70 via-teak-400/70 to-lacquer-400/70"
-  },
-  {
-    name: "တောင်ငူ ကြက်အုန်းနို့ဟင်း",
-    price: "6,800 ကျပ်",
-    description:
-      "ကြက်သားကို အုန်းနို့၊ အစိမ်းပင်ဆီလိပ်၊ မီးအုံကြော်မြည်နဲ့ နည်းနည်းချင်းပြုတ်ထားပါတယ်။",
-    rating: 4.8,
-    spice: "အလယ်အလတ်",
-    category: "ဟင်းမျိုးစုံ",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Coconut_Chicken_Curry.jpg",
-    gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
-  },
-  {
-    name: "လက်ဖက်သုပ်နဲ့ ခရမ်းချဉ်သီး",
-    price: "2,900 ကျပ်",
-    description:
-      "လက်ဖက်ကို ခရမ်းချဉ်သီး၊ နှမ်း၊ ပဲကြော်နဲ့ သုပ်ထားပြီး အရသာချဉ်မွှေးစေပါတယ်။",
-    rating: 4.6,
-    spice: "အနည်းငယ်",
-    category: "သုပ်မျိုးစုံ",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Laphet_thoke.JPG",
-    gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-500/70"
-  },
-  {
-    name: "ပုစွန်ဟင်း တောင်ငူပုံစံ",
-    price: "7,500 ကျပ်",
-    description:
-      "ပုစွန်ကို သံပုရာရည်၊ ကြက်သွန်မြီးချဉ်နဲ့ နံနံပင်အရသာနဲ့ ချက်ထားပါတယ်။",
-    rating: 4.8,
-    spice: "စပ်",
-    category: "ဟင်းမျိုးစုံ",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Goan_prawn_curry.jpg",
-    gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
-  },
-  {
-    name: "တမာရင် အငွေ့ဆန် set",
-    price: "5,200 ကျပ်",
-    description:
-      "အနူးညံ့တဲ့ ဆန်ထမင်းကို တမာရင်ရည်၊ ကြက်သွန်ကြော်နဲ့ ရာသီဟင်းသီးဟင်းရွက်နဲ့ ပေါင်းစပ်ထားပါတယ်။",
-    rating: 4.5,
-    spice: "မစပ်",
-    category: "ထမင်း",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Puliyogare_Or_Tamarind_Rice.jpg",
-    gradient: "from-teak-500/70 via-jade-400/70 to-lacquer-400/70"
+  en: {
+    languageLabel: "Language",
+    tag: "Taungoo City • Myanmar Traditional Cuisine",
+    heroTitle: "Taungoo Mohinga",
+    heroSubtitle: "\"Crafted for modern tastes with traditional soul\"",
+    heroDescription:
+      "\"Inspired by Taungoo morning markets — fresh herbal notes, slow-simmered broths, and authentic Myanmar flavors presented with a modern touch.\"",
+    reserveCta: "Reserve a Table",
+    viewMenu: "View Menu",
+    hoursLabel: "Open Hours",
+    hoursValue: "6:30 AM – 9:30 PM",
+    locationLabel: "Address",
+    locationValue: "Corner of Mandalay St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
+    deliveryLabel: "Delivery",
+    deliveryValue: "Available within 5 km",
+    featuredLabel: "Featured",
+    featuredTitle: "Mohinga Signature Bowl",
+    featuredDesc: "Slow-cooked fish broth with crispy fritters and fragrant herbs.",
+    storyTag: "Our Story",
+    storyTitle: "Taungoo roots, modern presentation.",
+    storyBody:
+      "KHIN LAY celebrates Taungoo breakfast culture with mohinga, tea-leaf salad, and regional flavors paired with a modern dining experience.",
+    chefNoteLabel: "Chef’s Note",
+    chefNote: "“Every bowl carries aromatics, balanced heat, and the memory of home.”",
+    chefName: "Chef Khin Lay, Taungoo",
+    highlights: [
+      {
+        title: "Taungoo Heritage",
+        text: "Recipes passed through generations, grounded in Bago region flavors.",
+        accent: "bg-lacquer-100 text-lacquer-700"
+      },
+      {
+        title: "Morning Broths",
+        text: "Slow-cooked from dawn with fish bones, lemongrass, and toasted spices.",
+        accent: "bg-jade-100 text-jade-700"
+      },
+      {
+        title: "Balanced Heat",
+        text: "From gentle to fiery, every dish balances spice with fresh herbs.",
+        accent: "bg-teak-100 text-teak-700"
+      }
+    ],
+    gallery: [
+      { label: "Morning Market", gradient: "from-jade-600/80 via-teak-400/80 to-lacquer-500/80" },
+      { label: "Signature Broth", gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80" },
+      { label: "Tea Leaf Ritual", gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80" }
+    ],
+    experienceTag: "Dining Experience",
+    experienceTitle: "Traditional soul, modern space.",
+    experienceBody:
+      "Soft lighting, lacquer-inspired textures, and an open broth station bring Taungoo’s rhythm to life.",
+    experienceFeatures: ["Live Broth Station", "Heritage Tea Bar", "Family Room"],
+    ratingLabel: "Today’s Rating",
+    ratingText: "Based on 1,240 community reviews",
+    ratingMetrics: [
+      { label: "Broth richness", value: "98%" },
+      { label: "Herbal balance", value: "96%" },
+      { label: "Service warmth", value: "95%" }
+    ],
+    weeklyLabel: "Weekend Special",
+    weeklyTitle: "Taungoo Heritage Platter",
+    weeklyBody: "Mohinga, tea leaf salad, and coconut curry — paired with jasmine tea.",
+    weeklyCta: "Preorder Now",
+    reservationTag: "Reservation",
+    reservationTitle: "Reserve by phone today.",
+    reservationBody:
+      "For now, reservations are confirmed by phone. Call us and we will confirm in minutes. Walk-ins are welcome for small groups.",
+    callLabel: "Call for booking",
+    callCta: "Call Now",
+    formTag: "Sample form",
+    formTitle: "Quick Reservation Request",
+    formPlaceholders: {
+      name: "Full name",
+      date: "Date",
+      time: "Time",
+      guests: "Guests",
+      phone: "Phone number",
+      note: "Notes (optional)"
+    },
+    formSubmit: "Submit Request",
+    formHint: "This is a sample form only. Calls are confirmed immediately.",
+    footerTitle: "Taungoo Mohinga",
+    footerBody: "Traditional flavors. Contemporary experience. Visit us in Taungoo for authentic Myanmar comfort food.",
+    footerCredit: "Hero background photo: Taungoo city (Wikimedia Commons)",
+    contactLabel: "Contact",
+    addressLabel: "Address",
+    addressValue: "North Dagon, Yangon",
+    addressLine2: "Near Yazaa Dirit Road",
+    mapTag: "Location",
+    mapTitle: "Find us in Yangon",
+    mapBody: "Tap the map for directions to KHIN LAY.",
+    mapLinkLabel: "Open in Google Maps"
   }
-];
-
-const highlights = [
-  {
-    title: "တောင်ငူအမွေအနှစ်",
-    text: "တောင်ငူနဲ့ ဗဂိုအရသာကို အိမ်သမားလက်နဲ့ ဆက်ခံလာတဲ့ ပုံစံအတိုင်း ချက်ပြုတ်ထားပါတယ်။",
-    accent: "bg-lacquer-100 text-lacquer-700"
-  },
-  {
-    title: "မနက်ချိန်အရသာ",
-    text: "မနက်ခင်းကတည်းက ငါးအရိုး၊ အစိမ်းပင်ဆီလိပ်၊ အမွှေးအကြိုင်နဲ့ တဖြည်းဖြည်းချက်ထားပါတယ်။",
-    accent: "bg-jade-100 text-jade-700"
-  },
-  {
-    title: "အပူချိန်ကိုလိုက်ဖက်",
-    text: "နူးညံ့တဲ့အပူကနေ စပ်ပြင်းတဲ့အပူအထိ သင့်တော်အောင်ညှိပေးထားပါတယ်။",
-    accent: "bg-teak-100 text-teak-700"
-  }
-];
-
-const gallery = [
-  {
-    label: "မနက်စျေးကွက်",
-    gradient: "from-jade-600/80 via-teak-400/80 to-lacquer-500/80"
-  },
-  {
-    label: "ဟင်းရည်အမှတ်တရ",
-    gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80"
-  },
-  {
-    label: "လက်ဖက်အခမ်းအနား",
-    gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80"
-  }
-];
-
-const filters = ["အားလုံး", "ခေါက်ဆွဲ", "သုပ်မျိုးစုံ", "ဟင်းမျိုးစုံ", "ထမင်း"];
+};
 
 export default function App() {
-  const [activeFilter, setActiveFilter] = React.useState("အားလုံး");
-  const visibleMenu =
-    activeFilter === "အားလုံး"
-      ? menuItems
-      : menuItems.filter((item) => item.category === activeFilter);
+  const [lang, setLang] = React.useState("my");
+  const t = content[lang];
 
   return (
     <div className="min-h-screen bg-teak-50">
       <header className="hero-bg relative overflow-hidden bg-hero-pattern">
         <div className="section-pad grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-8">
-            <span className="tag">တောင်ငူမြို့ • မြန်မာရိုးရာအစားအစာ</span>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <span className="tag">{t.tag}</span>
+              <div className="flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
+                <span className="text-[0.6rem] text-teak-500">{t.languageLabel}</span>
+                <button
+                  type="button"
+                  onClick={() => setLang("my")}
+                  className={`rounded-full px-3 py-1 ${
+                    lang === "my" ? "bg-lacquer-500 text-white" : "text-teak-600"
+                  }`}
+                >
+                  MY
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLang("en")}
+                  className={`rounded-full px-3 py-1 ${
+                    lang === "en" ? "bg-lacquer-500 text-white" : "text-teak-600"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
+            </div>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <img
@@ -127,41 +232,41 @@ export default function App() {
                   alt="KHIN LAY"
                   className="h-14 w-14 rounded-full border border-white/70 object-cover shadow-soft"
                 />
-                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teak-500">
+                <p className="text-sm mb-3 font-semibold uppercase tracking-[0.3em] text-teak-500">
                   KHIN LAY
                 </p>
               </div>
-              <h1 className="font-display text-4xl font-semibold leading-tight text-teak-900 sm:text-5xl lg:text-6xl">
-                တောင်ငူ မုန့်ဟင်းခါး
-                <span className="block text-2xl mt-7 text-lacquer-500">"ခေတ်သစ်စားသုံးသူတို့ရဲ့ အကြိုက်နဲ့အညီ အထူးစီမံဖန်တီးထားပါသည်"</span>
+              <h1 className="hero-title font-myanmar text-[2.8rem] leading-[1.05] text-teak-900 sm:text-[3.6rem] lg:text-[4.2rem]">
+                {t.heroTitle}
+                <span className="mt-6 block font-myanmar text-xl text-lacquer-600 sm:text-2xl">
+                  {t.heroSubtitle}
+                </span>
               </h1>
-              <p className="max-w-xl text-lg text-teak-700">
-                "တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ"
-              </p>
+              <p className="max-w-xl text-lg text-teak-700">{t.heroDescription}</p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <button className="rounded-full bg-lacquer-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5">
-                စားပွဲခုံကြိုတင်ချိန်း
+                {t.reserveCta}
               </button>
               <a
                 href="#menu"
                 className="rounded-full border border-teak-300 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5"
               >
-                မီနူးကြည့်ရန်
+                {t.viewMenu}
               </a>
             </div>
             <div className="flex flex-wrap gap-6 text-sm text-teak-600">
               <div>
-                <p className="font-semibold text-teak-800">ဆိုင်ဖွင့်ချိန်</p>
-                <p>မနက် 6:30 – ည 9:30</p>
+                <p className="font-semibold text-teak-800">{t.hoursLabel}</p>
+                <p>{t.hoursValue}</p>
               </div>
               <div>
-                <p className="font-semibold text-teak-800">တည်နေရာ</p>
-                <p>တောင်ငူမြို့ အလယ်ပိုင်း</p>
+                <p className="font-semibold text-teak-800">{t.locationLabel}</p>
+                <p>{t.locationValue}</p>
               </div>
               <div>
-                <p className="font-semibold text-teak-800">ပို့ဆောင်မှု</p>
-                <p>၅ ကီလိုမီတာအတွင်း ရရှိနိုင်</p>
+                <p className="font-semibold text-teak-800">{t.deliveryLabel}</p>
+                <p>{t.deliveryValue}</p>
               </div>
             </div>
           </div>
@@ -170,18 +275,16 @@ export default function App() {
             <div className="absolute -bottom-10 -right-16 h-48 w-48 rounded-full bg-jade-200/70 blur-3xl" />
             <div className="glass relative grid gap-6 p-6 sm:p-8">
               <div className="rounded-2xl bg-gradient-to-br from-lacquer-500/80 via-teak-500/80 to-jade-500/80 p-8 text-white shadow-soft">
-                <p className="text-xs uppercase tracking-[0.3em]">အထူးမီနူး</p>
-                <h2 className="mt-4 font-display text-2xl">မုန့်ဟင်းခါး ပန်းကန်</h2>
-                <p className="mt-3 text-sm text-white/80">
-                  ငါးရည်ကို အချိန်ကြာကြာချက်ပြီး ကြော်ဖက်၊ အစိမ်းရနံ့နဲ့ အနူးညံ့အရသာ။
-                </p>
+                <p className="text-xs uppercase tracking-[0.3em]">{t.featuredLabel}</p>
+                <h2 className="mt-4 font-display text-2xl">{t.featuredTitle}</h2>
+                <p className="mt-3 text-sm text-white/80">{t.featuredDesc}</p>
                 <div className="mt-6 flex items-center justify-between text-sm font-semibold">
                   <span>4,500 ကျပ်</span>
                   <span className="rounded-full bg-white/20 px-3 py-1">4.9 ★</span>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                {highlights.map((item) => (
+                {t.highlights.map((item) => (
                   <div
                     key={item.title}
                     className="rounded-2xl border border-white/70 bg-white/80 p-4 text-sm text-teak-700"
@@ -201,24 +304,17 @@ export default function App() {
       <section id="story" className="section-pad">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="space-y-6">
-            <p className="tag">ကျွန်ုပ်တို့အကြောင်း</p>
-            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">
-              တောင်ငူအရသာကို ခေတ်မီပုံစံနဲ့။
-            </h2>
-            <p className="text-teak-700">
-              KHIN LAY က တောင်ငူမနက်စာယဉ်ကျေးမှုကို အခြေခံပြီး မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်
-              စတဲ့ အရသာတွေကို ခေတ်မီစားသောက်မှုနဲ့ ပေါင်းစပ်ထားပါတယ်။
-            </p>
+            <p className="tag">{t.storyTag}</p>
+            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.storyTitle}</h2>
+            <p className="text-teak-700">{t.storyBody}</p>
             <div className="glass p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-teak-500">ချက်ပြုတ်သူမှတ်စု</p>
-              <p className="mt-4 text-lg font-semibold text-teak-900">
-                “ပန်းကန်တိုင်းမှာ အမွှေးအကြိုင်တွေ၊ အပူညှိမှုနဲ့ အိမ်အရသာကို ထည့်ထားပါတယ်။”
-              </p>
-              <p className="mt-2 text-sm text-teak-600">Chef Hnin, တောင်ငူ</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-teak-500">{t.chefNoteLabel}</p>
+              <p className="mt-4 text-lg font-semibold text-teak-900">{t.chefNote}</p>
+              <p className="mt-2 text-sm text-teak-600">{t.chefName}</p>
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {gallery.map((item) => (
+            {t.gallery.map((item) => (
               <div
                 key={item.label}
                 className={`relative flex min-h-[220px] items-end overflow-hidden rounded-3xl bg-gradient-to-br ${item.gradient} p-6 text-white shadow-soft`}
@@ -231,85 +327,50 @@ export default function App() {
         </div>
       </section>
 
-      <section id="menu" className="section-pad bg-paper">
-        <div className="mx-auto flex max-w-6xl flex-col gap-8">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div className="space-y-3">
-              <p className="tag">အထူးမီနူး</p>
-              <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">
-                တောင်ငူအရသာကို နေ့စဉ်ရွေးချယ်။
-              </h2>
-              <p className="max-w-xl text-teak-700">
-                အရသာကို အလွှာလိုက် ချိန်ညှိပြီး ခေတ်မီတင်ဆက်ထားတဲ့ ဟင်းတစ်ပွဲချင်းစီ။
-              </p>
+      <section id="location" className="section-pad">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-6">
+            <p className="tag">{t.mapTag}</p>
+            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.mapTitle}</h2>
+            <p className="max-w-xl text-teak-700">{t.mapBody}</p>
+            <div className="glass p-6 text-sm text-teak-700">
+              <p className="font-semibold text-teak-800">{t.locationLabel}</p>
+              <p className="mt-2">{t.locationValue}</p>
+              <p>{t.addressLine2}</p>
             </div>
-            <button className="rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5">
-              မီနူး PDF အပြည့်အစုံ
-            </button>
+            <a
+              href="https://www.google.com/maps?q=16.88928653951536,96.19133402464216"
+              className="inline-flex rounded-full bg-lacquer-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:-translate-y-0.5"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t.mapLinkLabel}
+            </a>
           </div>
-          <div className="flex flex-wrap gap-3">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
-                  activeFilter === filter
-                    ? "border-lacquer-400 bg-lacquer-500 text-white shadow-glow"
-                    : "border-teak-200 bg-white/70 text-teak-600 hover:-translate-y-0.5"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {visibleMenu.map((item) => (
-              <article key={item.name} className="menu-card">
-                <div className="relative h-44 overflow-hidden rounded-2xl">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${item.gradient} mix-blend-multiply`}
-                  />
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                    <span className="badge">{item.spice}</span>
-                    <span className="rating">{item.rating} ★</span>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-lg font-semibold text-teak-900">{item.name}</h3>
-                    <span className="text-sm font-semibold text-lacquer-600">{item.price}</span>
-                  </div>
-                  <p className="text-sm text-teak-600">{item.description}</p>
-                  <div className="flex items-center justify-between text-xs text-teak-500">
-                    <span>အမျိုးအစား: {item.category}</span>
-                    <span>ချက်ပြုတ်သူအကြံပြုချက်</span>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <div className="overflow-hidden rounded-3xl border border-teak-200 bg-white/80 shadow-soft">
+            <iframe
+              title="KHIN LAY location"
+              src="https://www.google.com/maps?q=16.88928653951536,96.19133402464216&z=16&output=embed"
+              className="h-[320px] w-full sm:h-[380px] lg:h-[420px]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
 
+      <MenuSection lang={lang} />
+
       <section id="experience" className="section-pad">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="glass p-8">
-            <p className="tag">စားသောက်မှုအတွေ့အကြုံ</p>
+            <p className="tag">{t.experienceTag}</p>
             <h2 className="mt-6 font-display text-3xl text-teak-900 sm:text-4xl">
-              ရိုးရာနဲ့ခေတ်မီအလှဆင်။
+              {t.experienceTitle}
             </h2>
-            <p className="mt-4 text-teak-700">
-              အလင်းရောင်နူးညံ့မှု၊ လက်ကာအလှဆင်မှုနဲ့ ဟင်းရည်ချက်နေရာဖွင့်ထားတဲ့
-              စားသောက်ခန်းက တောင်ငူရဲ့ အရသာကို တိုက်ရိုက်ခံစားနိုင်ပါတယ်။
-            </p>
+            <p className="mt-4 text-teak-700">{t.experienceBody}</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {["ဟင်းရည်ချက်နေရာ", "လက်ဖက်ဘား", "မိသားစုအခန်း"].map((item) => (
+              {t.experienceFeatures.map((item) => (
                 <div
                   key={item}
                   className="rounded-2xl border border-teak-200 bg-white/80 p-4 text-sm font-semibold text-teak-700"
@@ -321,32 +382,24 @@ export default function App() {
           </div>
           <div className="space-y-6">
             <div className="rounded-3xl border border-teak-200 bg-white/90 p-6 shadow-soft">
-              <p className="text-xs uppercase tracking-[0.3em] text-teak-500">ယနေ့အဆင့်သတ်မှတ်</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.ratingLabel}</p>
               <p className="mt-4 font-display text-4xl text-teak-900">4.8</p>
-              <p className="text-sm text-teak-600">အသိုင်းအဝိုင်းအဆင့်သတ်မှတ်မှု 1,240 ခုပေါ်မူတည်</p>
+              <p className="text-sm text-teak-600">{t.ratingText}</p>
               <div className="mt-6 space-y-3 text-sm text-teak-600">
-                <div className="flex items-center justify-between">
-                  <span>ဟင်းရည်အနံ့အရသာ</span>
-                  <span>98%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>အနံ့ညှိမှု</span>
-                  <span>96%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>ဝန်ဆောင်မှု</span>
-                  <span>95%</span>
-                </div>
+                {t.ratingMetrics.map((metric) => (
+                  <div key={metric.label} className="flex items-center justify-between">
+                    <span>{metric.label}</span>
+                    <span>{metric.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="rounded-3xl bg-gradient-to-br from-teak-600 via-lacquer-500 to-jade-600 p-6 text-white shadow-soft">
-              <p className="text-xs uppercase tracking-[0.3em]">အပတ်စဉ်အထူး</p>
-              <h3 className="mt-4 font-display text-2xl">တောင်ငူအမွေအနှစ်ပွဲ</h3>
-              <p className="mt-3 text-sm text-white/80">
-                မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်၊ ကြက်အုန်းနို့ဟင်း — ညွှန်ပြချက်သင်္ကန်ခြောက်ဖက်နဲ့။
-              </p>
+              <p className="text-xs uppercase tracking-[0.3em]">{t.weeklyLabel}</p>
+              <h3 className="mt-4 font-display text-2xl">{t.weeklyTitle}</h3>
+              <p className="mt-3 text-sm text-white/80">{t.weeklyBody}</p>
               <button className="mt-6 rounded-full bg-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-wide">
-                ကြိုတင်မှာယူရန်
+                {t.weeklyCta}
               </button>
             </div>
           </div>
@@ -356,74 +409,69 @@ export default function App() {
       <section id="reservation" className="section-pad bg-paper">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
-            <p className="tag">ကြိုတင်ချိန်းဆိုမှု</p>
+            <p className="tag">{t.reservationTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">
-              ဖုန်းခေါ်ပြီး ကြိုတင်ချိန်းနိုင်ပါသည်။
+              {t.reservationTitle}
             </h2>
-            <p className="max-w-xl text-teak-700">
-              ယခုအချိန်မှာ ဖုန်းနဲ့သာ ကြိုတင်ချိန်းနိုင်ပါတယ်။ ဖုန်းခေါ်လိုက်တာနဲ့ အချိန်တိုအတွင်း အတည်ပြုပါမယ်။
-              လူနည်းအုပ်စုများအတွက် လက်ရှိအချိန်လာရောက်လည်း အဆင်ပြေပါတယ်။
-            </p>
+            <p className="max-w-xl text-teak-700">{t.reservationBody}</p>
             <div className="glass p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-teak-500">ဖုန်းခေါ်ရန်</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.callLabel}</p>
               <p className="mt-4 font-display text-3xl text-teak-900">+95 9 123 456 789</p>
-              <p className="mt-2 text-sm text-teak-600">နေ့စဉ် မနက် 6:30 – ည 9:30</p>
+              <p className="mt-2 text-sm text-teak-600">{t.hoursValue}</p>
               <a
                 href="tel:+959123456789"
                 className="mt-6 inline-flex rounded-full bg-lacquer-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:-translate-y-0.5"
               >
-                ယခုဖုန်းခေါ်ရန်
+                {t.callCta}
               </a>
             </div>
           </div>
           <div className="glass p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-teak-500">နမူနာဖောင်</p>
-            <h3 className="mt-4 font-display text-2xl text-teak-900">အလွယ်တကူ ကြိုတင်ဖောင်</h3>
+            <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.formTag}</p>
+            <h3 className="mt-4 font-display text-2xl text-teak-900">{t.formTitle}</h3>
             <form className="mt-6 grid gap-4 text-sm text-teak-700">
               <input
                 className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                placeholder="အမည် အပြည့်အစုံ"
+                placeholder={t.formPlaceholders.name}
                 type="text"
               />
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
                   className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                  placeholder="နေ့ရက်"
+                  placeholder={t.formPlaceholders.date}
                   type="date"
                 />
                 <input
                   className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                  placeholder="အချိန်"
+                  placeholder={t.formPlaceholders.time}
                   type="time"
                 />
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
                   className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                  placeholder="လူအရေအတွက်"
+                  placeholder={t.formPlaceholders.guests}
                   type="number"
                   min="1"
                   max="20"
                 />
                 <input
                   className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                  placeholder="ဖုန်းနံပါတ်"
+                  placeholder={t.formPlaceholders.phone}
                   type="tel"
                 />
               </div>
               <textarea
                 className="min-h-[120px] rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
-                placeholder="မှတ်ချက် (မလိုအပ်ပါက ကျန်ထားနိုင်)"
+                placeholder={t.formPlaceholders.note}
               />
               <button
                 type="button"
                 className="rounded-full border border-teak-300 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 transition hover:-translate-y-0.5"
               >
-                တင်သွင်းရန်
+                {t.formSubmit}
               </button>
-              <p className="text-xs text-teak-500">
-                ဤဖောင်သည် နမူနာသာ ဖြစ်သည်။ ဖုန်းဖြင့်သာ အတည်ပြုနိုင်ပါသည်။
-              </p>
+              <p className="text-xs text-teak-500">{t.formHint}</p>
             </form>
           </div>
         </div>
@@ -440,24 +488,20 @@ export default function App() {
               />
               <p className="text-sm uppercase tracking-[0.3em] text-teak-300">KHIN LAY</p>
             </div>
-            <h3 className="font-display text-3xl text-white">တောင်ငူ မုန့်ဟင်းခါး</h3>
-            <p className="text-sm text-teak-200">
-              ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့မှာ အစစ်အမှန် မြန်မာအရသာကိုခံစားပါ။
-            </p>
-            <p className="text-xs text-teak-400">
-              မူရင်းနောက်ခံဓာတ်ပုံ: Taungoo city (Wikimedia Commons)
-            </p>
+            <h3 className="font-display text-3xl text-white">{t.footerTitle}</h3>
+            <p className="text-sm text-teak-200">{t.footerBody}</p>
+            <p className="text-xs text-teak-400">{t.footerCredit}</p>
           </div>
           <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2">
             <div>
-              <p className="font-semibold text-white">ဆက်သွယ်ရန်</p>
+              <p className="font-semibold text-white">{t.contactLabel}</p>
               <p>+95 9 123 456 789</p>
               <p>hello@khinlay.mm</p>
             </div>
             <div>
-              <p className="font-semibold text-white">လိပ်စာ</p>
-              <p>တောင်ငူမြို့ အလယ်ပိုင်း၊ ဗဂိုတိုင်း</p>
-              <p>ရတနာပုံလမ်းအနီး</p>
+              <p className="font-semibold text-white">{t.addressLabel}</p>
+              <p>{t.addressValue}</p>
+              <p>{t.addressLine2}</p>
             </div>
           </div>
         </div>
