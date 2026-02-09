@@ -188,7 +188,7 @@ export default function MenuSection({ lang = "my" }) {
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.title}</h2>
             <p className="max-w-xl text-teak-700">{t.body}</p>
           </div>
-          <button className="rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5">
+          <button className="w-full rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:w-auto">
             {t.pdf}
           </button>
         </div>
@@ -197,7 +197,7 @@ export default function MenuSection({ lang = "my" }) {
             <button
               key={filter.key}
               onClick={() => setActiveFilter(filter.key)}
-              className={`rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
+              className={`w-full rounded-full border px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition sm:w-auto ${
                 activeFilter === filter.key
                   ? "border-lacquer-400 bg-lacquer-500 text-white shadow-glow"
                   : "border-teak-200 bg-white/70 text-teak-600 hover:-translate-y-0.5"

@@ -9,7 +9,7 @@ const content = {
     heroSubtitle: "\"ခေတ်သစ်စားသုံးသူတို့ရဲ့ အကြိုက်နဲ့အညီ အထူးစီမံဖန်တီးထားပါသည်\"",
     heroDescription:
       "\"တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ\"",
-    reserveCta: "စားပွဲခုံကြိုတင်ချိန်း",
+    reserveCta: "ကြိုတင်စာပွဲ ရယူရန်",
     viewMenu: "မီနူးကြည့်ရန်",
     hoursLabel: "ဆိုင်ဖွင့်ချိန်",
     hoursValue: "မနက် 6:30 – ည 9:30",
@@ -199,8 +199,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-teak-50">
       <header className="hero-bg relative overflow-hidden bg-hero-pattern">
-        <div className="section-pad grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-8">
+        <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <span className="tag">{t.tag}</span>
               <div className="flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
@@ -225,37 +225,37 @@ export default function App() {
                 </button>
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div className="flex items-center gap-4">
                 <img
                   src="/logo/khin-lay.jpeg"
                   alt="KHIN LAY"
-                  className="h-14 w-14 rounded-full border border-white/70 object-cover shadow-soft"
+                  className="h-12 w-12 rounded-full border border-white/70 object-cover shadow-soft sm:h-14 sm:w-14"
                 />
                 <p className="text-sm mb-3 font-semibold uppercase tracking-[0.3em] text-teak-500">
                   KHIN LAY
                 </p>
               </div>
-              <h1 className="hero-title font-myanmar text-[2.8rem] leading-[1.05] text-teak-900 sm:text-[3.6rem] lg:text-[4.2rem]">
+              <h1 className="hero-title font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-[3.2rem] lg:text-[4.2rem]">
                 {t.heroTitle}
-                <span className="mt-6 block font-myanmar text-xl text-lacquer-600 sm:text-2xl">
+                <span className="mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
                   {t.heroSubtitle}
                 </span>
               </h1>
-              <p className="max-w-xl text-lg text-teak-700">{t.heroDescription}</p>
+              <p className="max-w-xl text-base text-teak-700 sm:text-lg">{t.heroDescription}</p>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="rounded-full bg-lacquer-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <button className="w-full rounded-full bg-lacquer-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto">
                 {t.reserveCta}
               </button>
               <a
                 href="#menu"
-                className="rounded-full border border-teak-300 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5"
+                className="w-full rounded-full border border-teak-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:w-auto"
               >
                 {t.viewMenu}
               </a>
             </div>
-            <div className="flex flex-wrap gap-6 text-sm text-teak-600">
+            <div className="grid gap-4 text-sm text-teak-600 sm:grid-cols-3 sm:gap-6">
               <div>
                 <p className="font-semibold text-teak-800">{t.hoursLabel}</p>
                 <p>{t.hoursValue}</p>
@@ -270,10 +270,10 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative lg:justify-self-end">
             <div className="absolute -left-12 -top-16 h-40 w-40 rounded-full bg-lacquer-200/70 blur-3xl" />
             <div className="absolute -bottom-10 -right-16 h-48 w-48 rounded-full bg-jade-200/70 blur-3xl" />
-            <div className="glass relative grid gap-6 p-6 sm:p-8">
+            <div className="glass relative grid gap-6 p-5 sm:p-8">
               <div className="rounded-2xl bg-gradient-to-br from-lacquer-500/80 via-teak-500/80 to-jade-500/80 p-8 text-white shadow-soft">
                 <p className="text-xs uppercase tracking-[0.3em]">{t.featuredLabel}</p>
                 <h2 className="mt-4 font-display text-2xl">{t.featuredTitle}</h2>
@@ -313,7 +313,7 @@ export default function App() {
               <p className="mt-2 text-sm text-teak-600">{t.chefName}</p>
             </div>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {t.gallery.map((item) => (
               <div
                 key={item.label}
@@ -369,7 +369,7 @@ export default function App() {
               {t.experienceTitle}
             </h2>
             <p className="mt-4 text-teak-700">{t.experienceBody}</p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {t.experienceFeatures.map((item) => (
                 <div
                   key={item}
@@ -420,7 +420,7 @@ export default function App() {
               <p className="mt-2 text-sm text-teak-600">{t.hoursValue}</p>
               <a
                 href="tel:+959123456789"
-                className="mt-6 inline-flex rounded-full bg-lacquer-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:-translate-y-0.5"
+                className="mt-6 inline-flex w-full justify-center rounded-full bg-lacquer-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto"
               >
                 {t.callCta}
               </a>
@@ -467,7 +467,7 @@ export default function App() {
               />
               <button
                 type="button"
-                className="rounded-full border border-teak-300 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 transition hover:-translate-y-0.5"
+                className="w-full rounded-full border border-teak-300 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 transition hover:-translate-y-0.5 sm:w-auto"
               >
                 {t.formSubmit}
               </button>
