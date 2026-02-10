@@ -38,11 +38,86 @@ body {
   @apply inline-flex items-center gap-1 rounded-full bg-jade-100 px-3 py-1 text-xs font-semibold text-jade-700;
 }
 
+.icon-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(53, 39, 28, 0.2);
+}
+
 .hero-title {
   font-weight: 700;
   letter-spacing: 0.02em;
-  text-shadow: 0 12px 30px rgba(53, 39, 28, 0.25);
+  text-shadow:
+    1px 1px 0 rgba(106, 78, 52, 0.45),
+    2px 2px 0 rgba(106, 78, 52, 0.4),
+    3px 3px 0 rgba(106, 78, 52, 0.32),
+    4px 4px 0 rgba(106, 78, 52, 0.26),
+    8px 10px 20px rgba(53, 39, 28, 0.2);
   font-family: "Noto Serif Myanmar", "Fraunces", serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal,
+.reveal-soft {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  animation: fade-up 0.8s ease forwards;
+}
+
+.reveal-soft.in-view {
+  animation: fade-in 0.9s ease forwards;
+  transform: none;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-soft {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .hero-bg {

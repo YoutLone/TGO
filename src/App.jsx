@@ -1,4 +1,5 @@
 import React from "react";
+import { setupScrollReveal } from "./utils/scrollReveal.js";
 import MenuSection from "./components/MenuSection.jsx";
 
 const content = {
@@ -196,14 +197,19 @@ export default function App() {
   const [lang, setLang] = React.useState("my");
   const t = content[lang];
 
+  React.useEffect(() => {
+    const cleanup = setupScrollReveal(document);
+    return cleanup;
+  }, [lang]);
+
   return (
     <div className="min-h-screen bg-teak-50">
       <header className="hero-bg relative overflow-hidden bg-hero-pattern">
         <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <span className="tag">{t.tag}</span>
-              <div className="flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
+              <span className="tag reveal">{t.tag}</span>
+              <div className="reveal-soft flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
                 <span className="text-[0.6rem] text-teak-500">{t.languageLabel}</span>
                 <button
                   type="button"
@@ -226,25 +232,25 @@ export default function App() {
               </div>
             </div>
             <div className="space-y-5">
-              <div className="flex items-center gap-4">
+              <div className="reveal flex items-center gap-4">
                 <img
                   src="/logo/khin-lay.jpeg"
                   alt="KHIN LAY"
-                  className="h-12 w-12 rounded-full border border-white/70 object-cover shadow-soft sm:h-14 sm:w-14"
+                  className="icon-hover h-12 w-12 rounded-full border border-white/70 object-cover shadow-soft sm:h-14 sm:w-14"
                 />
                 <p className="text-sm mb-3 font-semibold uppercase tracking-[0.3em] text-teak-500">
                   KHIN LAY
                 </p>
               </div>
-              <h1 className="hero-title font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-[3.2rem] lg:text-[4.2rem]">
+              <h1 className="hero-title reveal font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-[3.2rem] lg:text-[4.2rem]">
                 {t.heroTitle}
                 <span className="mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
                   {t.heroSubtitle}
                 </span>
               </h1>
-              <p className="max-w-xl text-base text-teak-700 sm:text-lg">{t.heroDescription}</p>
+              <p className="reveal max-w-xl text-base text-teak-700 sm:text-lg">{t.heroDescription}</p>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="reveal flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               <a
                 href="#reservation"
                 className="w-full rounded-full bg-lacquer-500 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto"
@@ -258,7 +264,7 @@ export default function App() {
                 {t.viewMenu}
               </a>
             </div>
-            <div className="grid gap-4 text-sm text-teak-600 sm:grid-cols-3 sm:gap-6">
+            <div className="reveal grid gap-4 text-sm text-teak-600 sm:grid-cols-3 sm:gap-6">
               <div>
                 <p className="font-semibold text-teak-800">{t.hoursLabel}</p>
                 <p>{t.hoursValue}</p>
@@ -273,7 +279,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="relative lg:justify-self-end">
+          <div className="relative lg:justify-self-end reveal-soft">
             <div className="absolute -left-12 -top-16 h-40 w-40 rounded-full bg-lacquer-200/70 blur-3xl" />
             <div className="absolute -bottom-10 -right-16 h-48 w-48 rounded-full bg-jade-200/70 blur-3xl" />
             <div className="glass relative grid gap-6 p-5 sm:p-8">
@@ -306,7 +312,7 @@ export default function App() {
 
       <section id="story" className="section-pad">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div className="space-y-6">
+          <div className="space-y-6 reveal">
             <p className="tag">{t.storyTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.storyTitle}</h2>
             <p className="text-teak-700">{t.storyBody}</p>
@@ -320,7 +326,7 @@ export default function App() {
             {t.gallery.map((item) => (
               <div
                 key={item.label}
-                className={`relative flex min-h-[220px] items-end overflow-hidden rounded-3xl bg-gradient-to-br ${item.gradient} p-6 text-white shadow-soft`}
+                className={`reveal relative flex min-h-[220px] items-end overflow-hidden rounded-3xl bg-gradient-to-br ${item.gradient} p-6 text-white shadow-soft`}
               >
                 <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(0,0,0,0.2),transparent)]" />
                 <p className="relative text-lg font-semibold">{item.label}</p>
@@ -332,7 +338,7 @@ export default function App() {
 
       <section id="location" className="section-pad">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
+          <div className="space-y-6 reveal">
             <p className="tag">{t.mapTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.mapTitle}</h2>
             <p className="max-w-xl text-teak-700">{t.mapBody}</p>
@@ -350,7 +356,7 @@ export default function App() {
               {t.mapLinkLabel}
             </a>
           </div>
-          <div className="overflow-hidden rounded-3xl border border-teak-200 bg-white/80 shadow-soft">
+          <div className="reveal overflow-hidden rounded-3xl border border-teak-200 bg-white/80 shadow-soft">
             <iframe
               title="KHIN LAY location"
               src="https://www.google.com/maps?q=16.88928653951536,96.19133402464216&z=16&output=embed"
@@ -366,7 +372,7 @@ export default function App() {
 
       <section id="experience" className="section-pad">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="glass p-8">
+          <div className="glass p-8 reveal">
             <p className="tag">{t.experienceTag}</p>
             <h2 className="mt-6 font-display text-3xl text-teak-900 sm:text-4xl">
               {t.experienceTitle}
@@ -383,8 +389,8 @@ export default function App() {
               ))}
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="rounded-3xl border border-teak-200 bg-white/90 p-6 shadow-soft">
+          <div className="space-y-6 reveal">
+            <div className="reveal rounded-3xl border border-teak-200 bg-white/90 p-6 shadow-soft">
               <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.ratingLabel}</p>
               <p className="mt-4 font-display text-4xl text-teak-900">4.8</p>
               <p className="text-sm text-teak-600">{t.ratingText}</p>
@@ -397,7 +403,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl bg-gradient-to-br from-teak-600 via-lacquer-500 to-jade-600 p-6 text-white shadow-soft">
+            <div className="reveal rounded-3xl bg-gradient-to-br from-teak-600 via-lacquer-500 to-jade-600 p-6 text-white shadow-soft">
               <p className="text-xs uppercase tracking-[0.3em]">{t.weeklyLabel}</p>
               <h3 className="mt-4 font-display text-2xl">{t.weeklyTitle}</h3>
               <p className="mt-3 text-sm text-white/80">{t.weeklyBody}</p>
@@ -429,7 +435,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="glass p-6 sm:p-8">
+          <div className="glass p-6 sm:p-8 reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.formTag}</p>
             <h3 className="mt-4 font-display text-2xl text-teak-900">{t.formTitle}</h3>
             <form className="mt-6 grid gap-4 text-sm text-teak-700">
@@ -482,12 +488,12 @@ export default function App() {
 
       <footer className="section-pad bg-teak-900 text-teak-100">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-4">
+          <div className="space-y-4 reveal">
             <div className="flex items-center gap-3">
               <img
                 src="/logo/khin-lay.jpeg"
                 alt="KHIN LAY"
-                className="h-10 w-10 rounded-full border border-teak-700 object-cover"
+                className="icon-hover h-10 w-10 rounded-full border border-teak-700 object-cover"
               />
               <p className="text-sm uppercase tracking-[0.3em] text-teak-300">KHIN LAY</p>
             </div>
@@ -495,7 +501,7 @@ export default function App() {
             <p className="text-sm text-teak-200">{t.footerBody}</p>
             <p className="text-xs text-teak-400">{t.footerCredit}</p>
           </div>
-          <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2">
+          <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2 reveal">
             <div>
               <p className="font-semibold text-white">{t.contactLabel}</p>
               <p>+95 9 123 456 789</p>

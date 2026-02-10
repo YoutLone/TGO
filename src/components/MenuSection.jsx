@@ -1,4 +1,5 @@
 import React from "react";
+import { setupScrollReveal } from "../utils/scrollReveal.js";
 
 const menuItems = [
   {
@@ -179,10 +180,15 @@ export default function MenuSection({ lang = "my" }) {
       ? menuItems
       : menuItems.filter((item) => item.categoryKey === activeFilter);
 
+  React.useEffect(() => {
+    const cleanup = setupScrollReveal(document);
+    return cleanup;
+  }, [lang, activeFilter]);
+
   return (
     <section id="menu" className="section-pad bg-paper">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="flex flex-wrap items-end justify-between gap-6 reveal">
           <div className="space-y-3">
             <p className="tag">{t.tag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.title}</h2>
@@ -192,7 +198,7 @@ export default function MenuSection({ lang = "my" }) {
             {t.pdf}
           </button>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3 reveal">
           {filters.map((filter) => (
             <button
               key={filter.key}
@@ -209,7 +215,7 @@ export default function MenuSection({ lang = "my" }) {
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleMenu.map((item) => (
-            <article key={`${item.name[lang]}-${item.price[lang]}`} className="menu-card">
+            <article key={`${item.name[lang]}-${item.price[lang]}`} className="menu-card reveal">
               <div className="relative h-44 overflow-hidden rounded-2xl">
                 <img
                   src={item.image}
