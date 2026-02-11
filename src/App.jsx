@@ -52,22 +52,32 @@ const content = {
       { label: "ဟင်းရည်အမှတ်တရ", gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80" },
       { label: "လက်ဖက်အခမ်းအနား", gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80" }
     ],
-    experienceTag: "စားသောက်မှုအတွေ့အကြုံ",
-    experienceTitle: "ရိုးရာနဲ့ခေတ်မီအလှဆင်။",
+    experienceTag: "အမှတ်တရ မြင်ကွင်းများနှင့် အခိုက်အတန့်များ",
+    experienceTitle: "",
     experienceBody:
-      "အလင်းရောင်နူးညံ့မှု၊ လက်ကာအလှဆင်မှုနဲ့ ဟင်းရည်ချက်နေရာဖွင့်ထားတဲ့ စားသောက်ခန်းက တောင်ငူရဲ့ အရသာကို တိုက်ရိုက်ခံစားနိုင်ပါတယ်။",
-    experienceFeatures: ["ဟင်းရည်ချက်နေရာ", "လက်ဖက်ဘား", "မိသားစုအခန်း"],
-    ratingLabel: "ယနေ့အဆင့်သတ်မှတ်",
-    ratingText: "အသိုင်းအဝိုင်းအဆင့်သတ်မှတ်မှု 1,240 ခုပေါ်မူတည်",
-    ratingMetrics: [
-      { label: "ဟင်းရည်အနံ့အရသာ", value: "98%" },
-      { label: "အနံ့ညှိမှု", value: "96%" },
-      { label: "ဝန်ဆောင်မှု", value: "95%" }
+      "အငွေ့တထောင်းထောင်းနှင့် မုန့်ဟင်းခါးအိုးကြီးမှသည် မိသားစုများ၏ ပျော်ရွှင်စရာ စားပွဲဝိုင်းများအထိ၊ ကျွန်ုပ်တို့ တောင်ငူမီးဖိုဆောင်၏ စစ်မှန်သောအရသာနှင့် အမှတ်တရမြင်ကွင်းများကို လေ့လာကြည့်ရှုလိုက်ပါ။",
+    galleryItems: [
+      {
+        title: "မီးဖိုချက်ရမ်း",
+        caption: "မနက်ပိုင်း ဟင်းရည်ပြင်ဆင်ခြင်းနှင့် သဲအမွှေးစပ်ချက်ခြင်း။",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "စားပွဲများ",
+        caption: "နွေးထွေးတဲ့ အလင်းရောင်နဲ့ အတူစားသောက်ခြင်း။",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "ဟင်းပန်းကန် တင်ဆက်မှု",
+        caption: "လတ်ဆတ်တဲ့ ဟင်းသီးဟင်းရွက်နဲ့ အလှဆင်ပေးထားပါတယ်။",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "လက်ဖက်သုပ် အလေ့အကျင့်",
+        caption: "Taungoo ရဲ့ အကြိုက်ဆုံး အလှဆင်ပုံစံ။",
+        image: "/logo/background.jpg"
+      }
     ],
-    weeklyLabel: "အပတ်စဉ်အထူး",
-    weeklyTitle: "တောင်ငူအမွေအနှစ်ပွဲ",
-    weeklyBody: "မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်၊ ကြက်အုန်းနို့ဟင်း — ညွှန်ပြချက်သင်္ကန်ခြောက်ဖက်နဲ့။",
-    weeklyCta: "ကြိုတင်မှာယူရန်",
     reservationTag: "ကြိုတင်ချိန်းဆိုမှု",
     reservationTitle: "ဖုန်းခေါ်ပြီး ကြိုတင်ချိန်းနိုင်ပါသည်။",
     reservationBody:
@@ -145,22 +155,32 @@ const content = {
       { label: "Signature Broth", gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80" },
       { label: "Tea Leaf Ritual", gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80" }
     ],
-    experienceTag: "Dining Experience",
-    experienceTitle: "Traditional soul, modern space.",
+    experienceTag: "Moments & Memories",
+    experienceTitle: "",
     experienceBody:
-      "Soft lighting, lacquer-inspired textures, and an open broth station bring Taungoo’s rhythm to life.",
-    experienceFeatures: ["Live Broth Station", "Heritage Tea Bar", "Family Room"],
-    ratingLabel: "Today’s Rating",
-    ratingText: "Based on 1,240 community reviews",
-    ratingMetrics: [
-      { label: "Broth richness", value: "98%" },
-      { label: "Herbal balance", value: "96%" },
-      { label: "Service warmth", value: "95%" }
+      "From the steam of our morning broth station to the laughter around our family tables, witness the authentic flavors and cherished moments that define our Taungoo kitchen.",
+    galleryItems: [
+      {
+        title: "Kitchen Rhythm",
+        caption: "Early-morning broth prep and spice toasting.",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "Dining Tables",
+        caption: "Warm wood, soft lighting, and shared meals.",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "Chef Plating",
+        caption: "Signature bowls finished with fresh herbs.",
+        image: "/logo/background.jpg"
+      },
+      {
+        title: "Tea Leaf Ritual",
+        caption: "A Taungoo favorite, prepared tableside.",
+        image: "/logo/background.jpg"
+      }
     ],
-    weeklyLabel: "Weekend Special",
-    weeklyTitle: "Taungoo Heritage Platter",
-    weeklyBody: "Mohinga, tea leaf salad, and coconut curry — paired with jasmine tea.",
-    weeklyCta: "Preorder Now",
     reservationTag: "Reservation",
     reservationTitle: "Reserve by phone today.",
     reservationBody:
@@ -196,11 +216,20 @@ const content = {
 export default function App() {
   const [lang, setLang] = React.useState("my");
   const t = content[lang];
+  const [galleryIndex, setGalleryIndex] = React.useState(0);
 
   React.useEffect(() => {
     const cleanup = setupScrollReveal(document);
     return cleanup;
   }, [lang]);
+
+  React.useEffect(() => {
+    if (!t.galleryItems?.length) return undefined;
+    const interval = setInterval(() => {
+      setGalleryIndex((prev) => (prev + 1) % t.galleryItems.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [t.galleryItems?.length]);
 
   return (
     <div className="min-h-screen bg-teak-50">
@@ -370,47 +399,84 @@ export default function App() {
 
       <MenuSection lang={lang} />
 
-      <section id="experience" className="section-pad bg-sand-texture">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="glass p-8 reveal">
-            <p className="tag">{t.experienceTag}</p>
+      <section id="gallery" className="section-pad bg-sand-texture">
+        <div className="mx-auto max-w-2xl text-center reveal">
+          <p className="tag font-display text-xl uppercase tracking-[0.35em] sm:text-2xl">
+            {t.experienceTag}
+          </p>
+          {t.experienceTitle ? (
             <h2 className="mt-6 font-display text-3xl text-teak-900 sm:text-4xl">
               {t.experienceTitle}
             </h2>
-            <p className="mt-4 text-teak-700">{t.experienceBody}</p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {t.experienceFeatures.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-teak-200 bg-white/80 p-4 text-sm font-semibold text-teak-700"
+          ) : null}
+          <p className="mt-4 text-teak-700">{t.experienceBody}</p>
+        </div>
+        <div className="mt-10">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-teak-200 bg-white shadow-soft reveal">
+            <div className="relative h-[420px] sm:h-[480px]">
+              {t.galleryItems.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={`absolute inset-0 transition-all duration-700 ease-out ${
+                    index === galleryIndex
+                      ? "translate-x-0 opacity-100"
+                      : index < galleryIndex
+                        ? "-translate-x-8 opacity-0"
+                        : "translate-x-8 opacity-0"
+                  }`}
                 >
-                  {item}
-                </div>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-teak-950/70 via-teak-900/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/70">
+                      {t.experienceTag}
+                    </p>
+                    <h3 className="mt-3 font-display text-3xl">{item.title}</h3>
+                    <p className="mt-2 max-w-xl text-sm text-white/80">{item.caption}</p>
+                  </div>
+                </article>
               ))}
             </div>
-          </div>
-          <div className="space-y-6 reveal">
-            <div className="reveal rounded-3xl border border-teak-200 bg-white/90 p-6 shadow-soft">
-              <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.ratingLabel}</p>
-              <p className="mt-4 font-display text-4xl text-teak-900">4.8</p>
-              <p className="text-sm text-teak-600">{t.ratingText}</p>
-              <div className="mt-6 space-y-3 text-sm text-teak-600">
-                {t.ratingMetrics.map((metric) => (
-                  <div key={metric.label} className="flex items-center justify-between">
-                    <span>{metric.label}</span>
-                    <span>{metric.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="reveal rounded-3xl bg-gradient-to-br from-teak-600 via-lacquer-500 to-jade-600 p-6 text-white shadow-soft">
-              <p className="text-xs uppercase tracking-[0.3em]">{t.weeklyLabel}</p>
-              <h3 className="mt-4 font-display text-2xl">{t.weeklyTitle}</h3>
-              <p className="mt-3 text-sm text-white/80">{t.weeklyBody}</p>
-              <button className="mt-6 rounded-full bg-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-wide">
-                {t.weeklyCta}
+            <div className="absolute inset-y-0 left-0 flex items-center">
+              <button
+                type="button"
+                onClick={() =>
+                  setGalleryIndex((prev) => (prev - 1 + t.galleryItems.length) % t.galleryItems.length)
+                }
+                className="m-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white transition hover:bg-white/30"
+                aria-label="Previous slide"
+              >
+                ←
               </button>
             </div>
+            <div className="absolute inset-y-0 right-0 flex items-center">
+              <button
+                type="button"
+                onClick={() => setGalleryIndex((prev) => (prev + 1) % t.galleryItems.length)}
+                className="m-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white transition hover:bg-white/30"
+                aria-label="Next slide"
+              >
+                →
+              </button>
+            </div>
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {t.galleryItems.map((item, index) => (
+              <button
+                key={item.title}
+                type="button"
+                onClick={() => setGalleryIndex(index)}
+                className={`h-2.5 rounded-full transition-all ${
+                  index === galleryIndex ? "w-8 bg-lacquer-500" : "w-2.5 bg-teak-300"
+                }`}
+                aria-label={`Go to ${item.title}`}
+              />
+            ))}
           </div>
         </div>
       </section>
