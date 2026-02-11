@@ -204,7 +204,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-teak-50">
-      <header className="hero-bg relative overflow-hidden bg-hero-pattern">
+      <header className="hero-bg relative overflow-hidden bg-hero-pattern bg-cream-texture">
         <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
@@ -310,7 +310,7 @@ export default function App() {
         </div>
       </header>
 
-      <section id="story" className="section-pad">
+      <section id="story" className="section-pad bg-sand-texture">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="space-y-6 reveal">
             <p className="tag">{t.storyTag}</p>
@@ -336,7 +336,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="location" className="section-pad">
+      <section id="location" className="section-pad bg-cream-texture">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 reveal">
             <p className="tag">{t.mapTag}</p>
@@ -370,7 +370,7 @@ export default function App() {
 
       <MenuSection lang={lang} />
 
-      <section id="experience" className="section-pad">
+      <section id="experience" className="section-pad bg-sand-texture">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="glass p-8 reveal">
             <p className="tag">{t.experienceTag}</p>
@@ -415,7 +415,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="reservation" className="section-pad bg-paper">
+      <section id="reservation" className="section-pad bg-cream-texture">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
             <p className="tag">{t.reservationTag}</p>

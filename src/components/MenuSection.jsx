@@ -1,145 +1,455 @@
 import React from "react";
 import { setupScrollReveal } from "../utils/scrollReveal.js";
 
+const drinkPlaceholder =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%23f2e7d6'/><stop offset='1' stop-color='%23d9c3a2'/></linearGradient></defs><rect width='800' height='600' fill='url(%23g)'/><g fill='%239b7446' fill-opacity='0.35'><circle cx='180' cy='160' r='56'/><circle cx='520' cy='220' r='72'/><circle cx='360' cy='420' r='64'/></g><text x='50%' y='52%' text-anchor='middle' font-family='sans-serif' font-size='32' fill='%237f5c35' opacity='0.7'>Drink Photo</text></svg>";
+
 const menuItems = [
   {
-    name: { my: "တောင်ငူ မုန့်ဟင်းခါး (မုံဟင်းခါး)", en: "Taungoo Mohinga" },
-    price: { my: "4,500 ကျပ်", en: "4,500 MMK" },
+    name: { my: "တောင်ငူမုန့်ဟင်းခါးအရည် (အလွတ်)", en: "Taungoo Mohinga Soup (Plain)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
     description: {
-      my: "ငါးရည်အရသာနက်နက်ကို ချည်မျှင်ဆန်နွယ်နဲ့ချက်ပြီး ကြော်ဖက်၊ ပင်စည်ငှက်ပျော၊ သံပုရာနဲ့ သစ်သီးအရသာပေးထားပါတယ်။",
-      en: "Slow-simmered fish broth with rice noodles, crispy fritters, banana stem, and lime."
+      my: "ငရုတ်ကောင်းနံ့သင်းပြီး ငါးအနှစ်အရသာ濃သော တောင်ငူစတိုင် မုန့်ဟင်းခါးအရည်ဖြစ်ပါသည်။",
+      en: "Authentic Taungoo-style rice noodle soup with a rich, peppery fish broth."
     },
-    rating: 4.9,
+    rating: 4.8,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
-    categoryKey: "noodles",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Myanmar%E2%80%99s_Traditional_Food_-_Mohinga.jpg",
+    categoryKey: "mohinga",
+    image: drinkPlaceholder,
     gradient: "from-lacquer-500/70 via-teak-500/70 to-jade-500/70"
   },
   {
-    name: { my: "ရှမ်းတိုဖူး သုပ်", en: "Shan Tofu Salad" },
-    price: { my: "3,200 ကျပ်", en: "3,200 MMK" },
+    name: { my: "တောင်ငူမုန့်ဟင်းခါးအရည် (အကြော်ပါ)", en: "Taungoo Mohinga Soup (With Fritters)" },
+    price: { my: "3,000 ကျပ်", en: "3,000 MMK" },
     description: {
-      my: "ပဲသားဖြစ်တဲ့ တိုဖူးကို ကြက်သွန်ဆီ၊ မြေပဲကြော်နဲ့ စိမ့်သီးအရသာနဲ့ သုပ်ထားပါတယ်။",
-      en: "Soft chickpea tofu with garlic oil, roasted peanuts, and bright citrus dressing."
-    },
-    rating: 4.7,
-    spice: { my: "မစပ်", en: "Mild" },
-    categoryKey: "salads",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/ToFu_Salad.jpg",
-    gradient: "from-jade-500/70 via-teak-400/70 to-lacquer-400/70"
-  },
-  {
-    name: { my: "တောင်ငူ ကြက်အုန်းနို့ဟင်း", en: "Coconut Chicken Curry" },
-    price: { my: "6,800 ကျပ်", en: "6,800 MMK" },
-    description: {
-      my: "ကြက်သားကို အုန်းနို့၊ အစိမ်းပင်ဆီလိပ်၊ မီးအုံကြော်မြည်နဲ့ နည်းနည်းချင်းပြုတ်ထားပါတယ်။",
-      en: "Free-range chicken braised in coconut milk with lemongrass and toasted shallots."
+      my: "တောင်ငူမုန့်ဟင်းခါးအရည်ကို ကြွပ်ရွသော အကြော်စုံဖြင့် တွဲဖက်သုံးဆောင်နိုင်ပါသည်။",
+      en: "Our signature fish soup served with crispy, golden assorted fritters."
     },
     rating: 4.8,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
-    categoryKey: "curries",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Coconut_Chicken_Curry.jpg",
+    categoryKey: "mohinga",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "တောင်ငူမုန့်ဟင်းခါးအသုပ် (အလွတ်)", en: "Taungoo Mohinga Salad (Plain)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "မုန့်ဖတ်ကို မုန့်ဟင်းခါးအနှစ်၊ အမွှေးအကြိုင်တို့ဖြင့် အရသာရှိစွာ နယ်ဖတ်ထားသော အသုပ်ဖြစ်ပါသည်။",
+      en: "Rice noodles hand-tossed with savory fish gravy and traditional spices."
+    },
+    rating: 4.7,
+    spice: { my: "မစပ်", en: "Mild" },
+    categoryKey: "mohinga",
+    image: drinkPlaceholder,
     gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
   },
   {
-    name: { my: "လက်ဖက်သုပ်နဲ့ ခရမ်းချဉ်သီး", en: "Tea Leaf & Tomato Relish" },
-    price: { my: "2,900 ကျပ်", en: "2,900 MMK" },
+    name: { my: "တောင်ငူမုန့်ဟင်းခါးအသုပ် (အကြော်ပါ)", en: "Taungoo Mohinga Salad (With Fritters)" },
+    price: { my: "3,000 ကျပ်", en: "3,000 MMK" },
     description: {
-      my: "လက်ဖက်ကို ခရမ်းချဉ်သီး၊ နှမ်း၊ ပဲကြော်နဲ့ သုပ်ထားပြီး အရသာချဉ်မွှေးစေပါတယ်။",
-      en: "Fermented tea leaves with tomatoes, sesame, and crunchy beans."
+      my: "အရသာရှိသော မုန့်ဟင်းခါးအသုပ်ကို အကြော်ကြွပ်ကြွပ်လေးများထည့်၍ အားရပါးရ သုံးဆောင်နိုင်ပါသည်။",
+      en: "A flavorful noodle salad topped with crunchy fritters for the perfect texture."
     },
-    rating: 4.6,
-    spice: { my: "အနည်းငယ်", en: "Low" },
-    categoryKey: "salads",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Laphet_thoke.JPG",
+    rating: 4.7,
+    spice: { my: "မစပ်", en: "Mild" },
+    categoryKey: "mohinga",
+    image: drinkPlaceholder,
     gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-500/70"
   },
   {
-    name: { my: "ပုစွန်ဟင်း တောင်ငူပုံစံ", en: "Taungoo River Prawn Curry" },
-    price: { my: "7,500 ကျပ်", en: "7,500 MMK" },
+    name: { my: "ထမင်းသုပ် (အလွတ်)", en: "Rice Salad (Plain)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
     description: {
-      my: "ပုစွန်ကို သံပုရာရည်၊ ကြက်သွန်မြီးချဉ်နဲ့ နံနံပင်အရသာနဲ့ ချက်ထားပါတယ်။",
-      en: "Tamarind prawn curry with pickled garlic and fragrant basil."
+      my: "ထမင်းဖြူကို ဆီချက်၊ ပဲမှုန့်၊ ငရုတ်သီးတို့ဖြင့် အရသာရှိစွာ နယ်ဖတ်ထားသော ထမင်းသုပ်ဖြစ်ပါသည်။",
+      en: "Steamed rice hand-mixed with chili oil, roasted bean powder, and garlic for a savory taste."
     },
-    rating: 4.8,
-    spice: { my: "စပ်", en: "Hot" },
-    categoryKey: "curries",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Goan_prawn_curry.jpg",
-    gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
-  },
-  {
-    name: { my: "တမာရင် အငွေ့ဆန် set", en: "Golden Tamarind Rice Set" },
-    price: { my: "5,200 ကျပ်", en: "5,200 MMK" },
-    description: {
-      my: "အနူးညံ့တဲ့ ဆန်ထမင်းကို တမာရင်ရည်၊ ကြက်သွန်ကြော်နဲ့ ရာသီဟင်းသီးဟင်းရွက်နဲ့ ပေါင်းစပ်ထားပါတယ်။",
-      en: "Steamed rice with tamarind glaze, fried onions, and seasonal vegetables."
-    },
-    rating: 4.5,
-    spice: { my: "မစပ်", en: "Mild" },
+    rating: 4.6,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Puliyogare_Or_Tamarind_Rice.jpg",
+    image: drinkPlaceholder,
     gradient: "from-teak-500/70 via-jade-400/70 to-lacquer-400/70"
   },
   {
-    name: { my: "ကိုကာကော်လာ", en: "Coca-Cola" },
-    price: { my: "1,200 ကျပ်", en: "1,200 MMK" },
+    name: { my: "ထမင်းသုပ် (ကြက်ဥကြော်ပါ)", en: "Rice Salad (With Fried Egg)" },
+    price: { my: "3,500 ကျပ်", en: "3,500 MMK" },
     description: {
-      my: "အေးမြလန်းဆန်းစေတဲ့ ကာဗွန်ပေါင်းစပ်အချိုရည်။",
-      en: "Chilled sparkling soft drink."
+      my: "အရသာရှိသော ထမင်းသုပ်ကို အားဖြည့်ပေးမည့် ကြက်ဥကြော်ပူပူလေးနှင့် တွဲဖက်ထားပါသည်။",
+      en: "Our classic rice salad served with a perfectly cooked golden fried egg."
     },
     rating: 4.6,
-    spice: { my: "အေး", en: "Cold" },
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "rice",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "လက်ဖက်ထမင်း (အလွတ်)", en: "Tea Leaf Rice (Plain)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "လက်ဖက်နှပ်၏ ရနံ့သင်းပျံ့သော အရသာကို အကြော်စုံဖြင့် တွဲဖက်နယ်ထားသည့် ထမင်းသုပ်ဖြစ်ပါသည်။",
+      en: "Fragrant rice mixed with premium fermented tea leaves and crunchy beans."
+    },
+    rating: 4.6,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "rice",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-500/70"
+  },
+  {
+    name: { my: "လက်ဖက်ထမင်း (ကြက်ဥကြော်ပါ)", en: "Tea Leaf Rice (With Fried Egg)" },
+    price: { my: "3,500 ကျပ်", en: "3,500 MMK" },
+    description: {
+      my: "လက်ဖက်ထမင်း၏ အရသာကို ကြက်ဥကြော်ဖြင့် ပိုမိုပြည့်စုံအောင် ပေါင်းစပ်ထားပါသည်။",
+      en: "Savory tea leaf rice topped with a crispy fried egg for a complete meal."
+    },
+    rating: 4.6,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "rice",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "ပုန်းရည်ကြီးထမင်းသုပ် (အလွတ်)", en: "Pone Yay Gyi Rice Salad (Plain)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "ပုဂံဒေသထွက် ပုန်းရည်ကြီး၏ ထူးခြားသောအရသာဖြင့် နယ်ထားသည့် ရိုးရာထမင်းသုပ်ဖြစ်ပါသည်။",
+      en: "Rice mixed with traditional Bagan black bean paste (Pone Yay Gyi) for a bold, salty, and earthy flavor."
+    },
+    rating: 4.5,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "rice",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-400/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "ပုန်းရည်ကြီးထမင်းသုပ် (ကြက်ဥကြော်ပါ)", en: "Pone Yay Gyi Rice Salad (With Fried Egg)" },
+    price: { my: "3,500 ကျပ်", en: "3,500 MMK" },
+    description: {
+      my: "ပုန်းရည်ကြီးထမင်းသုပ်ကို ကြက်ဥကြော်နှင့် တွဲဖက်၍ ပိုမိုအရသာရှိစွာ သုံးဆောင်နိုင်ပါသည်။",
+      en: "The rich taste of black bean paste rice paired perfectly with a fried egg."
+    },
+    rating: 4.5,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "rice",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ခေါက်ဆွဲသုပ်", en: "Mixed Noodle Salad" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "ခေါက်ဆွဲဖတ်ကို ဆီချက်၊ ငရုတ်သီး၊ ဂေါ်ဖီတို့ဖြင့် အချိုးကျနယ်ထားသော အခြေခံသုပ်ဖြစ်ပါသည်။",
+      en: "Soft wheat noodles tossed with chili oil, garlic, and fresh cabbage."
+    },
+    rating: 4.6,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "salads",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "တောင်ငူ တို့ဟူးသုပ်", en: "Taungoo Tofu Salad" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "တောင်ငူဒေသထွက် တို့ဟူးကို အမွှေးအကြိုင်များဖြင့် အထူးတလည် သုပ်ထားသော အသုပ်ဖြစ်ပါသည်။",
+      en: "Smooth local tofu served with a unique Taungoo-style dressing and herbs."
+    },
+    rating: 4.6,
+    spice: { my: "မစပ်", en: "Mild" },
+    categoryKey: "salads",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-500/70"
+  },
+  {
+    name: { my: "လက်ဖက်သုပ်", en: "Tea Leaf Salad" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "အရသာရှိသော လက်ဖက်နှပ်ကို အကြော်စုံ၊ ကြက်သွန်ဖြူတို့ဖြင့် တွဲဖက်ထားသည့် ရိုးရာအသုပ်ဖြစ်ပါသည်။",
+      en: "A classic Myanmar fermented tea leaf mix with crunchy beans and garlic."
+    },
+    rating: 4.7,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "salads",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ဆေးဘဲဥသုပ်", en: "Century Egg Salad" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "ဆေးဘဲဥကို ကြက်သွန်၊ ခရမ်းချဉ်သီး၊ သံပုရာသီးတို့ဖြင့် ချဉ်ဖြုံးစပ်စပ် သုပ်ထားပါသည်။",
+      en: "Rich century eggs mixed with onions, tomatoes, and a tangy lime dressing."
+    },
+    rating: 4.5,
+    spice: { my: "အလယ်အလတ်", en: "Medium" },
+    categoryKey: "salads",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "တောင်ငူကော်ဖီ (အပူ)", en: "Taungoo Coffee (Hot)" },
+    price: { my: "2,000 ကျပ်", en: "2,000 MMK" },
+    description: {
+      my: "တောင်ငူဒေသထွက် ကော်ဖီစေ့ကို အသုံးပြုထားပြီး ရိုးရာရနံ့သင်းပျံ့သော ကော်ဖီဖြစ်ပါသည်။",
+      en: "Locally sourced beans from Taungoo with a rich, traditional aroma."
+    },
+    rating: 4.7,
+    spice: { my: "အပူ", en: "Hot" },
     categoryKey: "drinks",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Coca-Cola_can_355mL_2015.png",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
+  },
+  {
+    name: { my: "တောင်ငူကော်ဖီ (အအေး)", en: "Taungoo Coffee (Cold)" },
+    price: { my: "3,000 ကျပ်", en: "3,000 MMK" },
+    description: {
+      my: "တောင်ငူဒေသထွက် ကော်ဖီစေ့ကို အသုံးပြုထားပြီး ရိုးရာရနံ့သင်းပျံ့သော ကော်ဖီဖြစ်ပါသည်။",
+      en: "Locally sourced beans from Taungoo with a rich, traditional aroma."
+    },
+    rating: 4.6,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ကော်ဖီခါး (အပူ)", en: "Black Coffee (Hot)" },
+    price: { my: "1,500 ကျပ်", en: "1,500 MMK" },
+    description: {
+      my: "ကော်ဖီ၏ သဘာဝခါးသက်သော အရသာကို ကြိုက်နှစ်သက်သူများအတွက် အထူးသင့်လျော်ပါသည်။",
+      en: "Pure, bold espresso for those who love the natural bitterness of coffee."
+    },
+    rating: 4.5,
+    spice: { my: "အပူ", en: "Hot" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
+  },
+  {
+    name: { my: "ကော်ဖီခါး (အအေး)", en: "Black Coffee (Cold)" },
+    price: { my: "2,000 ကျပ်", en: "2,000 MMK" },
+    description: {
+      my: "ကော်ဖီ၏ သဘာဝခါးသက်သော အရသာကို ကြိုက်နှစ်သက်သူများအတွက် အထူးသင့်လျော်ပါသည်။",
+      en: "Pure, bold espresso for those who love the natural bitterness of coffee."
+    },
+    rating: 4.5,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "ပျားသံပုရာ (အပူ)", en: "Honey Lemon (Hot)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "လန်းဆန်းစေရန် သဘာဝပျားရည်စစ်စစ်နှင့် သံပုရာသီးကို အချိုးကျစပ်ထားပါသည်။",
+      en: "A refreshing blend of natural honey and fresh lime to boost your day."
+    },
+    rating: 4.6,
+    spice: { my: "အပူ", en: "Hot" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ပျားသံပုရာ (အအေး)", en: "Honey Lemon (Cold)" },
+    price: { my: "3,000 ကျပ်", en: "3,000 MMK" },
+    description: {
+      my: "လန်းဆန်းစေရန် သဘာဝပျားရည်စစ်စစ်နှင့် သံပုရာသီးကို အချိုးကျစပ်ထားပါသည်။",
+      en: "A refreshing blend of natural honey and fresh lime to boost your day."
+    },
+    rating: 4.6,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-400/70 to-jade-500/70"
+  },
+  {
+    name: { my: "သံပုရာလက်ဖက်ရည် (အပူ)", en: "Lemon Tea (Hot)" },
+    price: { my: "2,000 ကျပ်", en: "2,000 MMK" },
+    description: {
+      my: "လက်ဖက်ရည်၏ ဖန်ခါးမှုနှင့် သံပုရာ၏ ချဉ်ဖြုံးမှုကို ပေါင်းစပ်ပေးထားသော လက်ဖက်ရည်ဖြစ်ပါသည်။",
+      en: "A classic, zesty tea that balances citrus sourness with tea tannins."
+    },
+    rating: 4.5,
+    spice: { my: "အပူ", en: "Hot" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "သံပုရာလက်ဖက်ရည် (အအေး)", en: "Lemon Tea (Cold)" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "လက်ဖက်ရည်၏ ဖန်ခါးမှုနှင့် သံပုရာ၏ ချဉ်ဖြုံးမှုကို ပေါင်းစပ်ပေးထားသော လက်ဖက်ရည်ဖြစ်ပါသည်။",
+      en: "A classic, zesty tea that balances citrus sourness with tea tannins."
+    },
+    rating: 4.5,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ပျားသံပုရာလက်ဖက်ရည် (အပူ)", en: "Honey Lemon Tea (Hot)" },
+    price: { my: "3,000 ကျပ်", en: "3,000 MMK" },
+    description: {
+      my: "ပျားရည်၊ သံပုရာနှင့် လက်ဖက်ရည်တို့ ပေါင်းစပ်ထားသော အမောပြေစေသည့် သောက်စရာဖြစ်ပါသည်။",
+      en: "The perfect trio of tea, sweet honey, and tangy lemon for a soothing drink."
+    },
+    rating: 4.6,
+    spice: { my: "အပူ", en: "Hot" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
+  },
+  {
+    name: { my: "ပျားသံပုရာလက်ဖက်ရည် (အအေး)", en: "Honey Lemon Tea (Cold)" },
+    price: { my: "3,500 ကျပ်", en: "3,500 MMK" },
+    description: {
+      my: "ပျားရည်၊ သံပုရာနှင့် လက်ဖက်ရည်တို့ ပေါင်းစပ်ထားသော အမောပြေစေသည့် သောက်စရာဖြစ်ပါသည်။",
+      en: "The perfect trio of tea, sweet honey, and tangy lemon for a soothing drink."
+    },
+    rating: 4.6,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-400/70 to-jade-500/70"
+  },
+  {
+    name: { my: "ဒိန်ချဉ်", en: "Yogurt" },
+    price: { my: "3,500 ကျပ်", en: "3,500 MMK" },
+    description: {
+      my: "ကျန်းမာရေးနှင့်ညီညွတ်ပြီး အရသာရှိသော အေးမြသည့် ဒိန်ချဉ်ဖြစ်ပါသည်။",
+      en: "Creamy, chilled yogurt that is both healthy and deliciously satisfying."
+    },
+    rating: 4.4,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ကိုကာကိုလာ", en: "Coca-Cola" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "လန်းဆန်းမှုကို ချက်ချင်းပေးစွမ်းနိုင်သော ကမ္ဘာကျော် ကိုကာကိုလာ အချိုရည်ဖြစ်ပါသည်။",
+      en: "The world’s favorite sparkling cola for an instant hit of refreshment."
+    },
+    rating: 4.5,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
     gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
   },
   {
     name: { my: "စပရိုက်", en: "Sprite" },
-    price: { my: "1,200 ကျပ်", en: "1,200 MMK" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
     description: {
-      my: "လီမွန်ရောထွေးထားတဲ့ အေးမြအရသာ။",
-      en: "Lemon-lime flavored sparkling drink."
+      my: "ရေငတ်ပြေစေမည့် သံပုရာအရသာရှိသော ကြည်လင်သည့် ဆိုဒါအချိုရည်ဖြစ်ပါသည်။",
+      en: "A crisp, clean, lemon-lime flavored soda to quench your thirst."
     },
-    rating: 4.5,
-    spice: { my: "အေး", en: "Cold" },
+    rating: 4.4,
+    spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sprite_2019_can.jpg",
+    image: drinkPlaceholder,
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
-    name: { my: "ဖန်တား", en: "Fanta" },
-    price: { my: "1,200 ကျပ်", en: "1,200 MMK" },
+    name: { my: "ဝမ်းဟန်ဒရက်ပလပ်စ်", en: "100 Plus" },
+    price: { my: "2,700 ကျပ်", en: "2,700 MMK" },
     description: {
-      my: "အလွတ်သောက်ကောင်းတဲ့ သောက်စရာချိုချို။",
-      en: "Bright, fruity sparkling drink."
+      my: "ကိုယ်ခန္ဓာမှ ဆုံးရှုံးသွားသော ရေဓာတ်နှင့် အားအင်များကို ဖြည့်တင်းပေးသည့် အချိုရည်ဖြစ်ပါသည်။",
+      en: "An isotonic drink to rehydrate and replenish your body’s energy."
     },
     rating: 4.4,
-    spice: { my: "အေး", en: "Cold" },
+    spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Fanta_Orange_2018.jpg",
-    gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ရိုင်ရယ်ဒီ", en: "Royal-D" },
+    price: { my: "1,700 ကျပ်", en: "1,700 MMK" },
+    description: {
+      my: "ပင်ပန်းနွမ်းနယ်မှုကို ပြေပျောက်စေပြီး အားအင်ပြန်လည်ပြည့်ဖြိုးစေသော အချိုရည်ဖြစ်ပါသည်။",
+      en: "An electrolyte drink designed to boost stamina and recovery."
+    },
+    rating: 4.3,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
+  },
+  {
+    name: { my: "ရှပ်ခ် (အားဖြည့်အချိုရည်)", en: "SHARK" },
+    price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
+    description: {
+      my: "တစ်နေ့တာလုံး တက်ကြွလန်းဆန်းစေရန် အားဖြည့်ပေးသည့် အားဖြည့်အချိုရည်ဖြစ်ပါသည်။",
+      en: "A powerful energy drink to keep you alert and active all day."
+    },
+    rating: 4.3,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
+  },
+  {
+    name: { my: "လီပို", en: "Lipo" },
+    price: { my: "2,000 ကျပ်", en: "2,000 MMK" },
+    description: {
+      my: "ဗီတာမင်ဓာတ်များ ပါဝင်သော လူကြိုက်များသည့် အားဖြည့်အချိုရည်ဖြစ်ပါသည်။",
+      en: "A classic vitamin-enriched energy booster for physical and mental focus."
+    },
+    rating: 4.3,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-lacquer-400/70 to-jade-500/70"
+  },
+  {
+    name: { my: "သောက်ရေသန့်", en: "Purified Water" },
+    price: { my: "1,000 ကျပ်", en: "1,000 MMK" },
+    description: {
+      my: "စနစ်တကျ သန့်စင်ထားသော သန့်ရှင်းလတ်ဆတ်သည့် သောက်ရေသန့်ဖြစ်ပါသည်။",
+      en: "Clean and safe bottled water processed through high-quality filtration."
+    },
+    rating: 4.2,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
+  },
+  {
+    name: { my: "ဒင်ဖုံဖျော်ရည် (မျိုးစုံ)", en: "Ding Fong Juice (All)" },
+    price: { my: "2,000 ကျပ်", en: "2,000 MMK" },
+    description: {
+      my: "အရသာမျိုးစုံရှိသော အရည်အသွေးမြင့် သစ်သီးဖျော်ရည်ဖြစ်ပါသည်။",
+      en: "High-quality fruit cordial available in a variety of vibrant flavors."
+    },
+    rating: 4.4,
+    spice: { my: "အအေး", en: "Cold" },
+    categoryKey: "drinks",
+    image: drinkPlaceholder,
+    gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-400/70"
   }
 ];
 
 const filterLabels = {
   my: {
     all: "အားလုံး",
-    noodles: "ခေါက်ဆွဲ",
-    salads: "သုပ်မျိုးစုံ",
-    curries: "ဟင်းမျိုးစုံ",
+    mohinga: "မုန့်ဟင်းခါး",
+    salads: "အသုပ်မျိုးစုံ",
     rice: "ထမင်း",
-    drinks: "အချိုရည်"
+    drinks: "ကော်ဖီနှင့်အအေးမျိုးစုံ"
   },
   en: {
     all: "All",
-    noodles: "Noodles",
+    mohinga: "Mohinga",
     salads: "Salads",
-    curries: "Curries",
     rice: "Rice",
-    drinks: "Drinks"
+    drinks: "Coffee&Drinks"
   }
 };
 
@@ -150,7 +460,9 @@ const copy = {
     body: "အရသာကို အလွှာလိုက် ချိန်ညှိပြီး ခေတ်မီတင်ဆက်ထားတဲ့ ဟင်းတစ်ပွဲချင်းစီ။",
     pdf: "မီနူး PDF အပြည့်အစုံ",
     category: "အမျိုးအစား",
-    chef: "ချက်ပြုတ်သူအကြံပြုချက်"
+    chef: "ချက်ပြုတ်သူအကြံပြုချက်",
+    showAll: "အားလုံးပြရန်",
+    showLess: "အနည်းငယ်သာပြရန်"
   },
   en: {
     tag: "Signature Menu",
@@ -158,7 +470,9 @@ const copy = {
     body: "Each dish is crafted with layered aromatics, balanced heat, and modern presentation.",
     pdf: "Full Menu PDF",
     category: "Category",
-    chef: "Chef’s pick"
+    chef: "Chef’s pick",
+    showAll: "View All",
+    showLess: "Show Less"
   }
 };
 
@@ -167,26 +481,32 @@ export default function MenuSection({ lang = "my" }) {
   const t = copy[lang] ?? copy.my;
   const filters = [
     { key: "all", label: labels.all },
-    { key: "noodles", label: labels.noodles },
+    { key: "mohinga", label: labels.mohinga },
     { key: "salads", label: labels.salads },
-    { key: "curries", label: labels.curries },
     { key: "rice", label: labels.rice },
     { key: "drinks", label: labels.drinks }
   ];
 
   const [activeFilter, setActiveFilter] = React.useState("all");
+  const [showAll, setShowAll] = React.useState(false);
   const visibleMenu =
     activeFilter === "all"
       ? menuItems
       : menuItems.filter((item) => item.categoryKey === activeFilter);
+  const displayedMenu = showAll ? visibleMenu : visibleMenu.slice(0, 9);
+  const canToggle = visibleMenu.length > 9;
+
+  React.useEffect(() => {
+    setShowAll(false);
+  }, [activeFilter]);
 
   React.useEffect(() => {
     const cleanup = setupScrollReveal(document);
     return cleanup;
-  }, [lang, activeFilter]);
+  }, [lang, activeFilter, showAll]);
 
   return (
-    <section id="menu" className="section-pad bg-paper">
+    <section id="menu" className="section-pad bg-sand-texture">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex flex-wrap items-end justify-between gap-6 reveal">
           <div className="space-y-3">
@@ -214,7 +534,7 @@ export default function MenuSection({ lang = "my" }) {
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleMenu.map((item) => (
+          {displayedMenu.map((item) => (
             <article key={`${item.name[lang]}-${item.price[lang]}`} className="menu-card reveal">
               <div className="relative h-44 overflow-hidden rounded-2xl">
                 <img
@@ -247,6 +567,17 @@ export default function MenuSection({ lang = "my" }) {
             </article>
           ))}
         </div>
+        {canToggle && (
+          <div className="flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="rounded-full border border-teak-300 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 transition hover:-translate-y-0.5"
+            >
+              {showAll ? t.showLess : t.showAll}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
