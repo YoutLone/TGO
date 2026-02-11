@@ -456,9 +456,9 @@ const filterLabels = {
 const copy = {
   my: {
     tag: "အထူးမီနူး",
-    title: "တောင်ငူအရသာကို နေ့စဉ်ရွေးချယ်။",
-    body: "အရသာကို အလွှာလိုက် ချိန်ညှိပြီး ခေတ်မီတင်ဆက်ထားတဲ့ ဟင်းတစ်ပွဲချင်းစီ။",
-    pdf: "မီနူး PDF အပြည့်အစုံ",
+    title: "တောင်ငူရိုးရာအရသာစစ်စစ်ကို နေ့စဉ်လတ်ဆတ်စွာ ပြင်ဆင်ပေးထားပါသည်။",
+    body: "ဟင်းပွဲတိုင်းကို ဆွဲဆောင်မှုရှိသော ရနံ့၊ မျှတသောအစပ်အရသာနှင့် ခေတ်မီလှပသော ပြင်ဆင်မှုတို့ဖြင့် စေတနာပါပါ ဖန်တီးထားပါသည်။",
+    pdf: "မီနူး အပြည့်အစုံ",
     category: "အမျိုးအစား",
     chef: "ချက်ပြုတ်သူအကြံပြုချက်",
     showAll: "အားလုံးပြရန်",
@@ -508,15 +508,21 @@ export default function MenuSection({ lang = "my" }) {
   return (
     <section id="menu" className="section-pad bg-sand-texture">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-wrap items-end justify-between gap-6 reveal">
+        <div className="flex flex-col items-start gap-6 reveal sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-3">
             <p className="tag">{t.tag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.title}</h2>
             <p className="max-w-xl text-teak-700">{t.body}</p>
           </div>
-          <button className="w-full rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:w-auto">
-            {t.pdf}
-          </button>
+          {t.pdf ? (
+            <button
+              className={`self-end rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:self-auto ${
+                lang === "my" ? "min-w-[220px] sm:min-w-[260px]" : ""
+              }`}
+            >
+              {t.pdf}
+            </button>
+          ) : null}
         </div>
         <div className="flex flex-wrap gap-3 reveal">
           {filters.map((filter) => (

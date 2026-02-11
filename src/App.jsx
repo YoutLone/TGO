@@ -32,18 +32,18 @@ const content = {
     chefName: "Chef: Khin Lay, တောင်ငူ",
     highlights: [
       {
-        title: "တောင်ငူအမွေအနှစ်",
-        text: "တောင်ငူနဲ့ ဗဂိုအရသာကို အိမ်သမားလက်နဲ့ ဆက်ခံလာတဲ့ ပုံစံအတိုင်း ချက်ပြုတ်ထားပါတယ်။",
+        title: "တောင်ငူရိုးရာအမွေအနှစ်",
+        text: "ပဲခူးတိုင်းဒေသကြီး၏ ရိုးရာအရသာစစ်စစ်ကို အခြေခံပြီး မျိုးဆက်တစ်ခုမှတစ်ခုသို့ လက်ဆင့်ကမ်းလာသည့် တောင်ငူရိုးရာ ချက်နည်းပြုတ်နည်းများ ဖြစ်ပါသည်။",
         accent: "bg-lacquer-100 text-lacquer-700"
       },
       {
-        title: "မနက်ချိန်အရသာ",
-        text: "မနက်ခင်းကတည်းက ငါးအရိုး၊ အစိမ်းပင်ဆီလိပ်၊ အမွှေးအကြိုင်နဲ့ တဖြည်းဖြည်းချက်ထားပါတယ်။",
+        title: "အာရုံတက်မုန့်ဟင်းခါးရည်များ",
+        text: "ငါးအနှစ်၊ သန့်ရှင်းလတ်ဆတ်သော စပါးလင်နှင့် အမွှေးအကြိုင်များကို အသုံးပြုကာ အာရုံတက်ကတည်းက စိတ်ရှည်လက်ရှည် အချိန်ပေးချက်ပြုတ်ထားသော မုန့်ဟင်းခါးဟင်းရည် ပူပူနွေးနွေးများ ဖြစ်ပါသည်။",
         accent: "bg-jade-100 text-jade-700"
       },
       {
-        title: "အပူချိန်ကိုလိုက်ဖက်",
-        text: "နူးညံ့တဲ့အပူကနေ စပ်ပြင်းတဲ့အပူအထိ သင့်တော်အောင်ညှိပေးထားပါတယ်။",
+        title: "မျှတသောအစပ်အရသာ",
+        text: "အစပ်လျော့မှ အစပ်ပြင်းအထိ အရသာအမျိုးမျိုးရှိပြီး ဟင်းခတ်အမွှေးအကြိုင်များနှင့် လတ်ဆတ်သော ဆေးဘက်ဝင်အရွက်များကို အချိုးကျပေါင်းစပ်ပေးထားပါသည်။",
         accent: "bg-teak-100 text-teak-700"
       }
     ],
@@ -98,7 +98,6 @@ const content = {
     formHint: "ဤဖောင်သည် နမူနာသာ ဖြစ်သည်။ ဖုန်းဖြင့်သာ အတည်ပြုနိုင်ပါသည်။",
     footerTitle: "တောင်ငူ မုန့်ဟင်းခါး",
     footerBody: "ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့မှာ အစစ်အမှန် မြန်မာအရသာကိုခံစားပါ။",
-    footerCredit: "မူရင်းနောက်ခံဓာတ်ပုံ: Taungoo city (Wikimedia Commons)",
     contactLabel: "ဆက်သွယ်ရန်",
     addressLabel: "လိပ်စာ",
     addressValue: "မြောက်ဒဂုံမြို့နယ်၊ ရန်ကုန်",
@@ -136,17 +135,17 @@ const content = {
     highlights: [
       {
         title: "Taungoo Heritage",
-        text: "Recipes passed through generations, grounded in Bago region flavors.",
+        text: "Recipes passed through generations, grounded in the authentic flavors of the Bago region.",
         accent: "bg-lacquer-100 text-lacquer-700"
       },
       {
         title: "Morning Broths",
-        text: "Slow-cooked from dawn with fish bones, lemongrass, and toasted spices.",
+        text: "Slow-cooked from dawn with fish bones, fresh lemongrass, and aromatic toasted spices.",
         accent: "bg-jade-100 text-jade-700"
       },
       {
         title: "Balanced Heat",
-        text: "From gentle to fiery, every dish balances spice with fresh herbs.",
+        text: "From gentle to fiery, every dish perfectly balances traditional spices with fresh, local herbs.",
         accent: "bg-teak-100 text-teak-700"
       }
     ],
@@ -201,7 +200,6 @@ const content = {
     formHint: "This is a sample form only. Calls are confirmed immediately.",
     footerTitle: "Taungoo Mohinga",
     footerBody: "Traditional flavors. Contemporary experience. Visit us in Taungoo for authentic Myanmar comfort food.",
-    footerCredit: "Hero background photo: Taungoo city (Wikimedia Commons)",
     contactLabel: "Contact",
     addressLabel: "Address",
     addressValue: "North Dagon, Yangon",
@@ -565,7 +563,6 @@ export default function App() {
             </div>
             <h3 className="font-display text-3xl text-white">{t.footerTitle}</h3>
             <p className="text-sm text-teak-200">{t.footerBody}</p>
-            <p className="text-xs text-teak-400">{t.footerCredit}</p>
           </div>
           <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2 reveal">
             <div>
