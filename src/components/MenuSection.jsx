@@ -508,7 +508,7 @@ export default function MenuSection({ lang = "my" }) {
   return (
     <section id="menu" className="section-pad bg-sand-texture">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-col items-start gap-6 reveal sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col items-center gap-6 text-center reveal sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <div className="space-y-3">
             <p className="tag">{t.tag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.title}</h2>
@@ -516,7 +516,7 @@ export default function MenuSection({ lang = "my" }) {
           </div>
           {t.pdf ? (
             <button
-              className={`self-end rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:self-auto ${
+              className={`self-center rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:self-auto ${
                 lang === "my" ? "min-w-[220px] sm:min-w-[260px]" : ""
               }`}
             >

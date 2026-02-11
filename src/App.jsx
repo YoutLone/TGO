@@ -259,7 +259,7 @@ export default function App() {
               </div>
             </div>
             <div className="space-y-5">
-              <div className="reveal flex items-center gap-4">
+              <div className="reveal flex items-center justify-center gap-4 sm:justify-start">
                 <img
                   src="/logo/khin-lay.jpeg"
                   alt="KHIN LAY"
@@ -269,13 +269,15 @@ export default function App() {
                   KHIN LAY
                 </p>
               </div>
-              <h1 className="hero-title reveal font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-[3.2rem] lg:text-[4.2rem]">
+              <h1 className="hero-title reveal text-center font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-left sm:text-[3.2rem] lg:text-[4.2rem]">
                 {t.heroTitle}
-                <span className="mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
+                <span className="hero-subtitle mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
                   {t.heroSubtitle}
                 </span>
               </h1>
-              <p className="reveal max-w-xl text-base text-teak-700 sm:text-lg">{t.heroDescription}</p>
+              <p className="reveal max-w-xl text-center text-base text-teak-700 sm:text-left sm:text-lg">
+                {t.heroDescription}
+              </p>
             </div>
             <div className="reveal flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               <a
@@ -339,7 +341,7 @@ export default function App() {
 
       <section id="story" className="section-pad bg-sand-texture">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div className="space-y-6 reveal">
+          <div className="space-y-6 text-center reveal sm:text-left">
             <p className="tag">{t.storyTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.storyTitle}</h2>
             <p className="text-teak-700">{t.storyBody}</p>
@@ -365,7 +367,7 @@ export default function App() {
 
       <section id="location" className="section-pad bg-cream-texture">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6 reveal">
+          <div className="space-y-6 text-center reveal sm:text-left">
             <p className="tag">{t.mapTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.mapTitle}</h2>
             <p className="max-w-xl text-teak-700">{t.mapBody}</p>
@@ -481,7 +483,7 @@ export default function App() {
 
       <section id="reservation" className="section-pad bg-cream-texture">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
+          <div className="space-y-6 text-center sm:text-left">
             <p className="tag">{t.reservationTag}</p>
             <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">
               {t.reservationTitle}
