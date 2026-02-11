@@ -259,7 +259,7 @@ export default function App() {
               </div>
             </div>
             <div className="space-y-5">
-              <div className="reveal flex items-center justify-center gap-4 sm:justify-start">
+              <div className="reveal flex items-center gap-4">
                 <img
                   src="/logo/khin-lay.jpeg"
                   alt="KHIN LAY"
