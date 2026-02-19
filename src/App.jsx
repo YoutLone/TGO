@@ -60,22 +60,22 @@ const content = {
       {
         title: "မီးဖိုချက်ရမ်း",
         caption: "မနက်ပိုင်း ဟင်းရည်ပြင်ဆင်ခြင်းနှင့် သဲအမွှေးစပ်ချက်ခြင်း။",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-1.jpeg"
       },
       {
         title: "စားပွဲများ",
         caption: "နွေးထွေးတဲ့ အလင်းရောင်နဲ့ အတူစားသောက်ခြင်း။",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-2.jpeg"
       },
       {
         title: "ဟင်းပန်းကန် တင်ဆက်မှု",
         caption: "လတ်ဆတ်တဲ့ ဟင်းသီးဟင်းရွက်နဲ့ အလှဆင်ပေးထားပါတယ်။",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-3.jpeg"
       },
       {
         title: "လက်ဖက်သုပ် အလေ့အကျင့်",
         caption: "Taungoo ရဲ့ အကြိုက်ဆုံး အလှဆင်ပုံစံ။",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-4.jpeg"
       }
     ],
     reservationTag: "ကြိုတင်ချိန်းဆိုမှု",
@@ -162,22 +162,22 @@ const content = {
       {
         title: "Kitchen Rhythm",
         caption: "Early-morning broth prep and spice toasting.",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-1.jpeg"
       },
       {
         title: "Dining Tables",
         caption: "Warm wood, soft lighting, and shared meals.",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-2.jpeg"
       },
       {
         title: "Chef Plating",
         caption: "Signature bowls finished with fresh herbs.",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-3.jpeg"
       },
       {
         title: "Tea Leaf Ritual",
         caption: "A Taungoo favorite, prepared tableside.",
-        image: "/logo/background.jpg"
+        image: "/gallery/memory-4.jpeg"
       }
     ],
     reservationTag: "Reservation",
@@ -231,7 +231,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-teak-50">
-      <header className="hero-bg relative overflow-hidden bg-hero-pattern bg-cream-texture">
+      <header className="hero-bg hero-scene min-h-screen relative overflow-hidden bg-hero-pattern bg-cream-texture">
         <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
@@ -259,7 +259,7 @@ export default function App() {
               </div>
             </div>
             <div className="space-y-5">
-              <div className="reveal flex items-center gap-4">
+              <div className="reveal hero-stagger flex items-center gap-4" style={{ "--delay": "0.05s" }}>
                 <img
                   src="/logo/khin-lay.jpeg"
                   alt="KHIN LAY"
@@ -269,17 +269,26 @@ export default function App() {
                   KHIN LAY
                 </p>
               </div>
-              <h1 className="hero-title reveal text-center font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-left sm:text-[3.2rem] lg:text-[4.2rem]">
+              <h1
+                className="hero-title reveal hero-stagger text-center font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-left sm:text-[3.2rem] lg:text-[4.2rem]"
+                style={{ "--delay": "0.12s" }}
+              >
                 {t.heroTitle}
                 <span className="hero-subtitle mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
                   {t.heroSubtitle}
                 </span>
               </h1>
-              <p className="reveal max-w-xl text-center text-base text-teak-700 sm:text-left sm:text-lg">
+              <p
+                className="reveal hero-stagger max-w-xl text-center text-base text-teak-700 sm:text-left sm:text-lg"
+                style={{ "--delay": "0.2s" }}
+              >
                 {t.heroDescription}
               </p>
             </div>
-            <div className="reveal flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div
+              className="reveal hero-stagger flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
+              style={{ "--delay": "0.28s" }}
+            >
               <a
                 href="#reservation"
                 className="w-full rounded-full bg-lacquer-500 px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto"
@@ -293,7 +302,10 @@ export default function App() {
                 {t.viewMenu}
               </a>
             </div>
-            <div className="reveal grid gap-4 text-sm text-teak-600 sm:grid-cols-3 sm:gap-6">
+            <div
+              className="reveal hero-stagger grid gap-4 text-sm text-teak-600 sm:grid-cols-3 sm:gap-6"
+              style={{ "--delay": "0.36s" }}
+            >
               <div>
                 <p className="font-semibold text-teak-800">{t.hoursLabel}</p>
                 <p>{t.hoursValue}</p>
@@ -309,33 +321,36 @@ export default function App() {
             </div>
           </div>
           <div className="relative lg:justify-self-end reveal-soft">
-            <div className="absolute -left-12 -top-16 h-40 w-40 rounded-full bg-lacquer-200/70 blur-3xl" />
-            <div className="absolute -bottom-10 -right-16 h-48 w-48 rounded-full bg-jade-200/70 blur-3xl" />
-            <div className="glass relative grid gap-6 p-5 sm:p-8">
-              <div className="rounded-2xl bg-gradient-to-br from-lacquer-500/80 via-teak-500/80 to-jade-500/80 p-8 text-white shadow-soft">
-                <p className="text-xs uppercase tracking-[0.3em]">{t.featuredLabel}</p>
-                <h2 className="mt-4 font-display text-2xl">{t.featuredTitle}</h2>
-                <p className="mt-3 text-sm text-white/80">{t.featuredDesc}</p>
-                <div className="mt-6 flex items-center justify-between text-sm font-semibold">
-                  <span>4,500 ကျပ်</span>
-                  <span className="rounded-full bg-white/20 px-3 py-1">4.9 ★</span>
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {t.highlights.map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-2xl border border-white/70 bg-white/80 p-4 text-sm text-teak-700"
-                  >
-                    <p className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${item.accent}`}>
-                      {item.title}
-                    </p>
-                    <p className="mt-3">{item.text}</p>
-                  </div>
-                ))}
+            <div className="hero-bowl-stage">
+              <div className="hero-accent" aria-hidden="true" />
+              <div className="hero-bowl-ring" aria-hidden="true" />
+              <div className="hero-bowl product-float">
+                <img
+                  src="/logo/noodle.jpg"
+                  alt="KHIN LAY signature dish"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
+        </div>
+        <div className="hero-specials">
+          {[
+            "/gallery/memory-1.jpeg",
+            "/gallery/memory-2.jpeg",
+            "/gallery/memory-3.jpeg",
+            "/gallery/memory-4.jpeg"
+          ].map((src, index) => (
+            <div key={src} className="hero-thumb">
+              <img
+                src={src}
+                alt={`Special menu ${index + 1}`}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </header>
 
@@ -417,9 +432,9 @@ export default function App() {
               {t.galleryItems.map((item, index) => (
                 <article
                   key={item.title}
-                  className={`absolute inset-0 transition-all duration-700 ease-out ${
+                  className={`absolute inset-0 transition-all duration-700 ease-out carousel-slide ${
                     index === galleryIndex
-                      ? "translate-x-0 opacity-100"
+                      ? "translate-x-0 opacity-100 is-active"
                       : index < galleryIndex
                         ? "-translate-x-8 opacity-0"
                         : "translate-x-8 opacity-0"
