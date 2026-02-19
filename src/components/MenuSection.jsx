@@ -9,7 +9,7 @@ const menuItems = [
     name: { my: "တောင်ငူမုန့်ဟင်းခါးအရည် (အလွတ်)", en: "Taungoo Mohinga Soup (Plain)" },
     price: { my: "2,500 ကျပ်", en: "2,500 MMK" },
     description: {
-      my: "ငရုတ်ကောင်းနံ့သင်းပြီး ငါးအနှစ်အရသာ濃သော တောင်ငူစတိုင် မုန့်ဟင်းခါးအရည်ဖြစ်ပါသည်။",
+      my: "ငရုတ်ကောင်းနံ့သင်းပြီး ငါးအနှစ်အရသာသော တောင်ငူစတိုင် မုန့်ဟင်းခါးအရည်ဖြစ်ပါသည်။",
       en: "Authentic Taungoo-style rice noodle soup with a rich, peppery fish broth."
     },
     rating: 4.8,
@@ -67,7 +67,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "/menu/rice-egg.jpeg",
     gradient: "from-teak-500/70 via-jade-400/70 to-lacquer-400/70"
   },
   {
@@ -80,7 +80,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "/menu/rice-egg.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
@@ -93,7 +93,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "/menu/rice-lat-free.jpeg",
     gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-500/70"
   },
   {
@@ -106,7 +106,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "menu/rice-lat-egg.jpeg",
     gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-500/70"
   },
   {
@@ -119,7 +119,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "menu/rice-pone-egg.jpeg",
     gradient: "from-teak-600/70 via-jade-400/70 to-lacquer-500/70"
   },
   {
@@ -132,7 +132,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "rice",
-    image: drinkPlaceholder,
+    image: "menu/rice-pone-egg.jpeg",
     gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-400/70"
   },
   {
@@ -171,7 +171,7 @@ const menuItems = [
     rating: 4.7,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "salads",
-    image: drinkPlaceholder,
+    image: "menu/lat-phat.jpeg",
     gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-400/70"
   },
   {
@@ -184,7 +184,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "salads",
-    image: drinkPlaceholder,
+    image: "menu/duck-egg.jpeg",
     gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-500/70"
   },
   {
@@ -197,7 +197,7 @@ const menuItems = [
     rating: 4.7,
     spice: { my: "အပူ", en: "Hot" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/black-coffee-hot.jpeg",
     gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
   },
   {
@@ -210,7 +210,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/tgo-coffee-cold.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
@@ -223,7 +223,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အပူ", en: "Hot" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/black-coffee-hot.jpeg",
     gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
   },
   {
@@ -236,7 +236,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/black-coffee-cold.jpeg",
     gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-500/70"
   },
   {
@@ -275,7 +275,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အပူ", en: "Hot" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/lemon-tea-hot.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
   },
   {
@@ -288,7 +288,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/lemon-tea-cold.jpeg",
     gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-400/70"
   },
   {
@@ -301,7 +301,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အပူ", en: "Hot" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/honey-lemon-tea-hot.jpeg",
     gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
   },
   {
@@ -314,7 +314,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/honey-lemon-tea-cold.jpeg",
     gradient: "from-teak-600/70 via-lacquer-400/70 to-jade-500/70"
   },
   {
@@ -327,7 +327,7 @@ const menuItems = [
     rating: 4.4,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/yogurt.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
@@ -340,7 +340,7 @@ const menuItems = [
     rating: 4.5,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/coca-cola.jpeg",
     gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
   },
   {
@@ -353,7 +353,7 @@ const menuItems = [
     rating: 4.4,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/sprite.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
@@ -366,7 +366,7 @@ const menuItems = [
     rating: 4.4,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/100-plus.jpeg",
     gradient: "from-teak-600/70 via-jade-500/70 to-lacquer-400/70"
   },
   {
@@ -379,7 +379,7 @@ const menuItems = [
     rating: 4.3,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/royal-d.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
   },
   {
@@ -392,7 +392,7 @@ const menuItems = [
     rating: 4.3,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/shark.jpeg",
     gradient: "from-lacquer-600/70 via-teak-500/70 to-jade-500/70"
   },
   {
@@ -405,7 +405,7 @@ const menuItems = [
     rating: 4.3,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/lipo.jpeg",
     gradient: "from-teak-600/70 via-lacquer-400/70 to-jade-500/70"
   },
   {
@@ -418,7 +418,7 @@ const menuItems = [
     rating: 4.2,
     spice: { my: "အအေး", en: "Cold" },
     categoryKey: "drinks",
-    image: drinkPlaceholder,
+    image: "menu/wave-water.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
