@@ -203,10 +203,37 @@ body {
 }
 
 @media (max-width: 640px) {
+  .hero-scene {
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-bowl-stage {
+    height: clamp(280px, 50vh, 360px);
+    --bowl-size: clamp(260px, 46vh, 330px);
+  }
+
+  .hero-accent {
+    right: -120%;
+    top: 62%;
+    height: clamp(420px, 120vh, 620px);
+    width: clamp(260px, 70vw, 520px);
+  }
+
   .hero-specials {
-    bottom: 1rem;
-    flex-wrap: wrap;
+    left: 50%;
+    bottom: 0.75rem;
+    flex-wrap: nowrap;
     justify-content: center;
+    gap: 0.5rem;
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-thumb {
+    height: 48px;
+    width: 48px;
   }
 }
 .hero-scene {

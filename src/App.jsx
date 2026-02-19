@@ -324,7 +324,7 @@ export default function App() {
             <div className="hero-bowl-stage">
               <div className="hero-accent" aria-hidden="true" />
               <div className="hero-bowl-ring" aria-hidden="true" />
-              <div className="hero-bowl product-float">
+              <div className="hero-bowl">
                 <img
                   src="/logo/noodle.jpg"
                   alt="KHIN LAY signature dish"
