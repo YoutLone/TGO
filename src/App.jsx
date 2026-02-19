@@ -23,7 +23,7 @@ const content = {
     featuredTitle: "မုန့်ဟင်းခါး ပန်းကန်",
     featuredDesc: "ငါးရည်ကို အချိန်ကြာကြာချက်ပြီး ကြော်ဖက်၊ အစိမ်းရနံ့နဲ့ အနူးညံ့အရသာ။",
     storyTag: "ကျွန်ုပ်တို့အကြောင်း",
-    storyTitle: "တောင်ငူအငွေ့အသက်၊ ခေတ်သစ်လက်ရာ",
+    storyTitle: "တောင်ငူအငွေ့အသက်၊\nခေတ်သစ်လက်ရာ",
     storyBody:
       "တောင်ငူရဲ့ ရိုးရာနံနက်ခင်း အရသာတွေဖြစ်တဲ့ မုန့်ဟင်းခါး၊ လက်ဖက်သုပ်နဲ့ ဒေသထွက် အဆာပြေစာတွေကို ခေတ်ပေါ် စားသောက်မှုအတွေ့အကြုံသစ်နဲ့အတူ ခံစားလိုက်ပါ",
     chefNoteLabel: "ချက်ပြုတ်သူမှတ်စု",
@@ -229,6 +229,8 @@ export default function App() {
     return () => clearInterval(interval);
   }, [t.galleryItems?.length]);
 
+  const displayFont = lang === "my" ? "font-myanmar" : "font-display";
+
   return (
     <div className="min-h-screen bg-teak-50">
       <header className="hero-bg hero-scene min-h-screen relative overflow-hidden bg-hero-pattern bg-cream-texture">
@@ -294,7 +296,7 @@ export default function App() {
         <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <span className="tag reveal">{t.tag}</span>
+              <span className="tag reveal mt-4 sm:mt-0">{t.tag}</span>
             </div>
             <div className="space-y-5">
               <div className="reveal hero-stagger flex items-center gap-4" style={{ "--delay": "0.05s" }}>
@@ -402,7 +404,15 @@ export default function App() {
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div className="space-y-6 text-center reveal sm:text-left">
             <p className="tag">{t.storyTag}</p>
-            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.storyTitle}</h2>
+            <h2
+              className={`text-3xl text-teak-900 sm:text-4xl leading-relaxed ${displayFont}`}
+            >
+              {t.storyTitle.split("\n").map((line, index) => (
+                <span key={`${line}-${index}`} className={index === 0 ? "block" : "block mt-4"}>
+                  {line}
+                </span>
+              ))}
+            </h2>
             <p className="text-teak-700">{t.storyBody}</p>
             <div className="glass p-6">
               <p className="text-sm uppercase tracking-[0.3em] text-teak-500">{t.chefNoteLabel}</p>
@@ -428,7 +438,7 @@ export default function App() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 text-center reveal sm:text-left">
             <p className="tag">{t.mapTag}</p>
-            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.mapTitle}</h2>
+            <h2 className={`text-3xl text-teak-900 sm:text-4xl ${displayFont}`}>{t.mapTitle}</h2>
             <p className="max-w-xl text-teak-700">{t.mapBody}</p>
             <div className="glass p-6 text-sm text-teak-700">
               <p className="font-semibold text-teak-800">{t.locationLabel}</p>
@@ -460,11 +470,11 @@ export default function App() {
 
       <section id="gallery" className="section-pad bg-sand-texture">
         <div className="mx-auto max-w-2xl text-center reveal">
-          <p className="tag font-display text-xl uppercase tracking-[0.35em] sm:text-2xl">
+          <p className={`tag text-xl uppercase tracking-[0.35em] sm:text-2xl ${displayFont}`}>
             {t.experienceTag}
           </p>
           {t.experienceTitle ? (
-            <h2 className="mt-6 font-display text-3xl text-teak-900 sm:text-4xl">
+            <h2 className={`mt-6 text-3xl text-teak-900 sm:text-4xl ${displayFont}`}>
               {t.experienceTitle}
             </h2>
           ) : null}
@@ -495,7 +505,7 @@ export default function App() {
                     <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                       {t.experienceTag}
                     </p>
-                    <h3 className="mt-3 font-display text-3xl">{item.title}</h3>
+                    <h3 className={`mt-3 text-3xl ${displayFont}`}>{item.title}</h3>
                     <p className="mt-2 max-w-xl text-sm text-white/80">{item.caption}</p>
                   </div>
                 </article>
@@ -544,13 +554,13 @@ export default function App() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 text-center sm:text-left">
             <p className="tag">{t.reservationTag}</p>
-            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">
+            <h2 className={`text-3xl text-teak-900 sm:text-4xl ${displayFont}`}>
               {t.reservationTitle}
             </h2>
             <p className="max-w-xl text-teak-700">{t.reservationBody}</p>
             <div className="glass p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.callLabel}</p>
-              <p className="mt-4 font-display text-3xl text-teak-900">+95 9 123 456 789</p>
+              <p className={`mt-4 text-3xl text-teak-900 ${displayFont}`}>+95 9 123 456 789</p>
               <p className="mt-2 text-sm text-teak-600">{t.hoursValue}</p>
               <a
                 href="tel:+959123456789"
@@ -562,7 +572,7 @@ export default function App() {
           </div>
           <div className="glass p-6 sm:p-8 reveal">
             <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.formTag}</p>
-            <h3 className="mt-4 font-display text-2xl text-teak-900">{t.formTitle}</h3>
+            <h3 className={`mt-4 text-2xl text-teak-900 ${displayFont}`}>{t.formTitle}</h3>
             <form className="mt-6 grid gap-4 text-sm text-teak-700">
               <input
                 className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
@@ -622,7 +632,7 @@ export default function App() {
               />
               <p className="text-sm uppercase tracking-[0.3em] text-teak-300">KHIN LAY</p>
             </div>
-            <h3 className="font-display text-3xl text-white">{t.footerTitle}</h3>
+            <h3 className={`text-3xl text-white ${displayFont}`}>{t.footerTitle}</h3>
             <p className="text-sm text-teak-200">{t.footerBody}</p>
           </div>
           <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2 reveal">

@@ -456,7 +456,7 @@ const filterLabels = {
 const copy = {
   my: {
     tag: "အထူးမီနူး",
-    title: "တောင်ငူရိုးရာအရသာစစ်စစ်ကို နေ့စဉ်လတ်ဆတ်စွာ ပြင်ဆင်ပေးထားပါသည်။",
+    title: "တောင်ငူရိုးရာအရသာစစ်စစ်ကို\n နေ့စဉ်လတ်ဆတ်စွာ ပြင်ဆင်\nပေးထားပါသည်။",
     body: "ဟင်းပွဲတိုင်းကို ဆွဲဆောင်မှုရှိသော ရနံ့၊ မျှတသောအစပ်အရသာနှင့် ခေတ်မီလှပသော ပြင်ဆင်မှုတို့ဖြင့် စေတနာပါပါ ဖန်တီးထားပါသည်။",
     pdf: "မီနူး အပြည့်အစုံ",
     category: "အမျိုးအစား",
@@ -479,6 +479,8 @@ const copy = {
 export default function MenuSection({ lang = "my" }) {
   const labels = filterLabels[lang] ?? filterLabels.my;
   const t = copy[lang] ?? copy.my;
+  const displayFont = lang === "my" ? "font-myanmar" : "font-display";
+  const titleDesktopWrap = lang === "my" ? "sm:whitespace-normal" : "sm:whitespace-nowrap";
   const filters = [
     { key: "all", label: labels.all },
     { key: "mohinga", label: labels.mohinga },
@@ -510,14 +512,29 @@ export default function MenuSection({ lang = "my" }) {
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
         <div className="flex flex-col items-center gap-6 text-center reveal sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <div className="space-y-3">
-            <p className="tag">{t.tag}</p>
-            <h2 className="font-display text-3xl text-teak-900 sm:text-4xl">{t.title}</h2>
+            <p className="tag mb-4">{t.tag}</p>
+            <h2 className={`text-3xl text-teak-900 sm:text-4xl ${displayFont} sm:hidden`}>
+              {t.title.split("\n").map((line, index) => (
+                <span key={`${line}-${index}`} className={index === 0 ? "block" : "block mt-4"}>
+                  {line}
+                </span>
+              ))}
+            </h2>
+            <h2
+              className={`hidden text-teak-900 sm:block ${displayFont} ${
+                lang === "my"
+                  ? "text-xl sm:text-2xl lg:text-3xl sm:whitespace-nowrap"
+                  : "text-2xl sm:text-3xl lg:text-4xl sm:whitespace-nowrap"
+              }`}
+            >
+              {t.title.replace(/\s*\n\s*/g, " ")}
+            </h2>
             <p className="max-w-xl text-teak-700">{t.body}</p>
           </div>
           {t.pdf ? (
             <button
-              className={`self-center rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:self-auto ${
-                lang === "my" ? "min-w-[220px] sm:min-w-[260px]" : ""
+              className={`self-center rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:ml-auto sm:self-end sm:whitespace-nowrap ${
+                lang === "my" ? "px-4 py-2 text-xs tracking-[0.12em]" : ""
               }`}
             >
               {t.pdf}
