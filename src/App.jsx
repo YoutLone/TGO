@@ -232,31 +232,69 @@ export default function App() {
   return (
     <div className="min-h-screen bg-teak-50">
       <header className="hero-bg hero-scene min-h-screen relative overflow-hidden bg-hero-pattern bg-cream-texture">
+        <div className="hero-top-nav">
+          <nav className="hero-top-links flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
+            {[
+              { id: "story", label: t.storyTag },
+              { id: "gallery", label: t.galleryTag ?? "Gallery" },
+              { id: "location", label: t.mapTag },
+              { id: "reservation", label: t.reserveCta }
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-teak-600 transition hover:-translate-y-0.5"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div className="hero-top-lang flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
+            <span className="text-[0.6rem] text-teak-500">{t.languageLabel}</span>
+            <button
+              type="button"
+              onClick={() => setLang("my")}
+              className={`rounded-full px-3 py-1 ${lang === "my" ? "bg-lacquer-500 text-white" : "text-teak-600"}`}
+            >
+              MY
+            </button>
+            <button
+              type="button"
+              onClick={() => setLang("en")}
+              className={`rounded-full px-3 py-1 ${lang === "en" ? "bg-lacquer-500 text-white" : "text-teak-600"}`}
+            >
+              EN
+            </button>
+          </div>
+          <details className="hero-top-menu">
+            <summary className="hero-top-menu-button" aria-label="Open menu">
+              <span />
+              <span />
+              <span />
+            </summary>
+            <div className="hero-top-menu-panel">
+              {[
+                { id: "story", label: t.storyTag },
+                { id: "gallery", label: t.galleryTag ?? "Gallery" },
+                { id: "location", label: t.mapTag },
+                { id: "reservation", label: t.reserveCta }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="hero-top-menu-link"
+                  onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </details>
+        </div>
         <div className="section-pad grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <span className="tag reveal">{t.tag}</span>
-              <div className="reveal-soft flex items-center gap-2 rounded-full border border-teak-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-teak-600">
-                <span className="text-[0.6rem] text-teak-500">{t.languageLabel}</span>
-                <button
-                  type="button"
-                  onClick={() => setLang("my")}
-                  className={`rounded-full px-3 py-1 ${
-                    lang === "my" ? "bg-lacquer-500 text-white" : "text-teak-600"
-                  }`}
-                >
-                  MY
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setLang("en")}
-                  className={`rounded-full px-3 py-1 ${
-                    lang === "en" ? "bg-lacquer-500 text-white" : "text-teak-600"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
             </div>
             <div className="space-y-5">
               <div className="reveal hero-stagger flex items-center gap-4" style={{ "--delay": "0.05s" }}>
