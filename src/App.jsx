@@ -270,11 +270,17 @@ export default function App() {
                 </p>
               </div>
               <h1
-                className="hero-title reveal hero-stagger text-center font-myanmar text-[2.3rem] leading-[1.08] text-teak-900 sm:text-left sm:text-[3.2rem] lg:text-[4.2rem]"
+                className={`hero-title reveal hero-stagger text-center text-[2.3rem] leading-[1.08] text-teak-900 sm:text-left sm:text-[3.2rem] lg:text-[4.2rem] ${
+                  lang === "my" ? "font-myanmar" : "font-display"
+                }`}
                 style={{ "--delay": "0.12s" }}
               >
                 {t.heroTitle}
-                <span className="hero-subtitle mt-4 block font-myanmar text-lg text-lacquer-600 sm:mt-6 sm:text-2xl">
+                <span
+                  className={`hero-subtitle mt-4 block text-lg text-lacquer-600 sm:mt-6 sm:text-2xl ${
+                    lang === "my" ? "font-myanmar" : "font-display"
+                  }`}
+                >
                   {t.heroSubtitle}
                 </span>
               </h1>

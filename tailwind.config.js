@@ -42,8 +42,8 @@ export default {
         }
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        body: ["Manrope", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        body: ["Source Sans 3", "system-ui", "sans-serif"],
         myanmar: ["Noto Serif Myanmar", "serif"]
       },
       boxShadow: {
