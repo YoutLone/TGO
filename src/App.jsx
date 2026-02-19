@@ -97,10 +97,10 @@ const content = {
     formSubmit: "တင်သွင်းရန်",
     formHint: "ဤဖောင်သည် နမူနာသာ ဖြစ်သည်။ ဖုန်းဖြင့်သာ အတည်ပြုနိုင်ပါသည်။",
     footerTitle: "တောင်ငူ မုန့်ဟင်းခါး",
-    footerBody: "ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့မှာ အစစ်အမှန် မြန်မာအရသာကိုခံစားပါ။",
+    footerBody: "ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့ရဲ့ အစစ်အမှန် မြန်မာ့အရသာကိုခံစားပါ။",
     contactLabel: "ဆက်သွယ်ရန်",
     addressLabel: "လိပ်စာ",
-    addressValue: "မြောက်ဒဂုံမြို့နယ်၊ ရန်ကုန်",
+    addressValue: "မန္တလေးလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ် မြောက်ဒဂုံမြို့နယ် ရန်ကုန်",
     addressLine2: "ရာဇာဓိရာဇ်လမ်းအနီး",
     mapTag: "တည်နေရာ",
     mapTitle: "ဆိုင်တည်နေရာကို ရှာရန်",
@@ -202,7 +202,7 @@ const content = {
     footerBody: "Traditional flavors. Contemporary experience. Visit us in Taungoo for authentic Myanmar comfort food.",
     contactLabel: "Contact",
     addressLabel: "Address",
-    addressValue: "North Dagon, Yangon",
+    addressValue: "Corner of Mandalay St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
     addressLine2: "Near Yazaa Dirit Road",
     mapTag: "Location",
     mapTitle: "Find us in Yangon",
@@ -553,17 +553,17 @@ export default function App() {
       <section id="reservation" className="section-pad bg-cream-texture">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 text-center sm:text-left">
-            <p className="tag">{t.reservationTag}</p>
+            <p className="tag mb-3">{t.reservationTag}</p>
             <h2 className={`text-3xl text-teak-900 sm:text-4xl ${displayFont}`}>
               {t.reservationTitle}
             </h2>
             <p className="max-w-xl text-teak-700">{t.reservationBody}</p>
             <div className="glass p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.callLabel}</p>
-              <p className={`mt-4 text-3xl text-teak-900 ${displayFont}`}>+95 9 123 456 789</p>
+              <p className={`mt-4 text-3xl text-teak-900 ${displayFont}`}>09-9254911866 / 09-780705922 </p>
               <p className="mt-2 text-sm text-teak-600">{t.hoursValue}</p>
               <a
-                href="tel:+959123456789"
+                href="tel:+959254911866"
                 className="mt-6 inline-flex w-full justify-center rounded-full bg-lacquer-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:-translate-y-0.5 sm:w-auto"
               >
                 {t.callCta}
@@ -632,17 +632,17 @@ export default function App() {
               />
               <p className="text-sm uppercase tracking-[0.3em] text-teak-300">KHIN LAY</p>
             </div>
-            <h3 className={`text-3xl text-white ${displayFont}`}>{t.footerTitle}</h3>
+            <h3 className={`text-3xl text-gray ${displayFont}`}>{t.footerTitle}</h3>
             <p className="text-sm text-teak-200">{t.footerBody}</p>
           </div>
           <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2 reveal">
             <div>
-              <p className="font-semibold text-white">{t.contactLabel}</p>
-              <p>+95 9 123 456 789</p>
+              <p className="font-semibold text-gray">{t.contactLabel}</p>
+              <p>+959254911866</p>
               <p>hello@khinlay.mm</p>
             </div>
             <div>
-              <p className="font-semibold text-white">{t.addressLabel}</p>
+              <p className="font-semibold text-gray">{t.addressLabel}</p>
               <p>{t.addressValue}</p>
               <p>{t.addressLine2}</p>
             </div>
