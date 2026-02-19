@@ -59,7 +59,7 @@ body {
 }
 
 .tag {
-  @apply inline-flex items-center gap-2 rounded-full border border-teak-200/70 bg-[#fff6e6]/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 shadow-soft;
+  @apply inline-flex items-center gap-2 rounded-full border border-teak-200/70 bg-[#fff6e6]/80 px-4 pb-2 pt-4 text-xs font-semibold uppercase tracking-[0.2em] text-teak-700 shadow-soft;
 }
 
 .glass {
