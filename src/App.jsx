@@ -242,6 +242,15 @@ export default function App() {
     return () => clearInterval(interval);
   }, [t.galleryItems?.length]);
 
+  React.useEffect(() => {
+    if (window.location.hash !== "#menu") return;
+    const target = document.querySelector("#menu");
+    if (!target) return;
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }, []);
+
   const displayFont = lang === "my" ? "font-myanmar" : "font-display";
 
   return (

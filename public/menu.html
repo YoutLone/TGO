@@ -84,7 +84,7 @@
     <div class="page">
       <div class="top">
         <div class="title">Full Menu</div>
-        <a class="back" href="index.html#menu">Back</a>
+        <a class="back" href="/#menu">Back</a>
       </div>
       <div class="cards">
         <div class="card">
@@ -95,5 +95,14 @@
         </div>
       </div>
     </div>
+    <script>
+      const backLink = document.querySelector(".back");
+      if (backLink) {
+        backLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.location.href = "/#menu";
+        });
+      }
+    </script>
   </body>
 </html>

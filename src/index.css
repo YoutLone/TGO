@@ -158,8 +158,8 @@ body {
   height: 36px;
   width: 36px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.7);
   color: #111;
   display: grid;
   place-items: center;
@@ -169,13 +169,13 @@ body {
 
 .menu-modal-arrow {
   position: absolute;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   height: 40px;
   width: 40px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.7);
   color: #111;
   display: grid;
   place-items: center;
@@ -194,7 +194,7 @@ body {
 
 .menu-modal-arrow:hover {
   transform: translateY(-50%) scale(1.04);
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 640px) {
