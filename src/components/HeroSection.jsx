@@ -83,11 +83,11 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
               style={{ "--delay": "0.12s" }}
             >
               {t.heroTitle}
-              <span
-                className={`hero-subtitle mt-4 block text-base text-lacquer-600 sm:mt-6 sm:text-2xl ${
-                  lang === "my" ? "font-myanmar" : "font-display"
-                }`}
-              >
+                <span
+                  className={`hero-subtitle mt-4 block text-lacquer-600 sm:mt-6 sm:text-2xl ${
+                    lang === "my" ? "font-myanmar text-[0.95rem]" : "font-display text-base"
+                  }`}
+                >
                 {t.heroSubtitle.split("\n").map((line, index) => (
                   <span key={`${line}-${index}`} className={index === 0 ? "block" : "block mt-3"}>
                     {line}
