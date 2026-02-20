@@ -15,7 +15,7 @@ const menuItems = [
     rating: 4.8,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "mohinga",
-    image: drinkPlaceholder,
+    image: "menu/tgo-mhg-soup-fritter.jpeg",
     gradient: "from-lacquer-500/70 via-teak-500/70 to-jade-500/70"
   },
   {
@@ -28,7 +28,7 @@ const menuItems = [
     rating: 4.8,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "mohinga",
-    image: drinkPlaceholder,
+    image: "menu/tgo-mhg-soup-fritter.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-400/70"
   },
   {
@@ -41,7 +41,7 @@ const menuItems = [
     rating: 4.7,
     spice: { my: "မစပ်", en: "Mild" },
     categoryKey: "mohinga",
-    image: drinkPlaceholder,
+    image: "menu/tgo-mhg-salad-plain.jpeg",
     gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-600/70"
   },
   {
@@ -54,7 +54,7 @@ const menuItems = [
     rating: 4.7,
     spice: { my: "မစပ်", en: "Mild" },
     categoryKey: "mohinga",
-    image: drinkPlaceholder,
+    image: "menu/tgo-mhg-salad-fritter.jpeg",
     gradient: "from-jade-600/70 via-teak-500/70 to-lacquer-500/70"
   },
   {
@@ -145,7 +145,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "အလယ်အလတ်", en: "Medium" },
     categoryKey: "salads",
-    image: drinkPlaceholder,
+    image: "menu/mix-noodle-salad.jpeg",
     gradient: "from-jade-600/70 via-teak-400/70 to-lacquer-500/70"
   },
   {
@@ -158,7 +158,7 @@ const menuItems = [
     rating: 4.6,
     spice: { my: "မစပ်", en: "Mild" },
     categoryKey: "salads",
-    image: drinkPlaceholder,
+    image: "menu/tgo-tofu-salad.jpeg",
     gradient: "from-teak-600/70 via-lacquer-500/70 to-jade-500/70"
   },
   {
