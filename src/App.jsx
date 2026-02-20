@@ -16,7 +16,7 @@ const content = {
     hoursValue: "မနက် 6:30 – ည 9:30",
     locationLabel: "ဆိုင်လိပ်စာ",
     locationValue:
-      "မန္တလေးလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ်  မြောက်ဒဂုံမြို့နယ် ရန်ကုန်",
+      "မဟာဗန္ဓုလလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ် မြောက်ဒဂုံမြို့နယ် ၊ ရန်ကုန်။",
     deliveryLabel: "ပို့ဆောင်မှု",
     deliveryValue: "၅ ကီလိုမီတာအတွင်း ရရှိနိုင်",
     featuredLabel: "အထူးမီနူး",
@@ -100,7 +100,7 @@ const content = {
     footerBody: "ရိုးရာအရသာ၊ ခေတ်မီအတွေ့အကြုံ။ တောင်ငူမြို့ရဲ့ အစစ်အမှန် မြန်မာ့အရသာကိုခံစားပါ။",
     contactLabel: "ဆက်သွယ်ရန်",
     addressLabel: "လိပ်စာ",
-    addressValue: "မန္တလေးလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ် မြောက်ဒဂုံမြို့နယ် ရန်ကုန်",
+    addressValue: "မဟာဗန္ဓုလလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ် မြောက်ဒဂုံမြို့နယ် ၊ ရန်ကုန်။",
     addressLine2: "ရာဇာဓိရာဇ်လမ်းအနီး",
     mapTag: "တည်နေရာ",
     mapTitle: "ဆိုင်တည်နေရာကို ရှာရန်",
@@ -119,7 +119,7 @@ const content = {
     hoursLabel: "Open Hours",
     hoursValue: "6:30 AM – 9:30 PM",
     locationLabel: "Address",
-    locationValue: "Corner of Mandalay St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
+    locationValue: "Corner of Maha Bandula St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
     deliveryLabel: "Delivery",
     deliveryValue: "Available within 5 km",
     featuredLabel: "Featured",
@@ -202,7 +202,7 @@ const content = {
     footerBody: "Traditional flavors. Contemporary experience. Visit us in Taungoo for authentic Myanmar comfort food.",
     contactLabel: "Contact",
     addressLabel: "Address",
-    addressValue: "Corner of Mandalay St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
+    addressValue: "Corner of Maha Bandula St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
     addressLine2: "Near Yazaa Dirit Road",
     mapTag: "Location",
     mapTitle: "Find us in Yangon",
@@ -424,9 +424,9 @@ export default function App() {
             {t.gallery.map((item) => (
               <div
                 key={item.label}
-                className={`reveal relative flex min-h-[220px] items-end overflow-hidden rounded-3xl bg-gradient-to-br ${item.gradient} p-6 text-white shadow-soft`}
+                className="glass-card reveal relative flex min-h-[220px] items-end overflow-hidden p-6 text-teak-900"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(0,0,0,0.2),transparent)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.45),transparent)]" />
                 <p className="relative text-lg font-semibold">{item.label}</p>
               </div>
             ))}
@@ -454,7 +454,7 @@ export default function App() {
               {t.mapLinkLabel}
             </a>
           </div>
-          <div className="reveal overflow-hidden rounded-3xl border border-teak-200 bg-white/80 shadow-soft">
+          <div className="glass-card reveal overflow-hidden">
             <iframe
               title="KHIN LAY location"
               src="https://www.google.com/maps?q=16.88928653951536,96.19133402464216&z=16&output=embed"
@@ -481,7 +481,7 @@ export default function App() {
           <p className="mt-4 text-teak-700">{t.experienceBody}</p>
         </div>
         <div className="mt-10">
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-teak-200 bg-white shadow-soft reveal">
+          <div className="glass-card relative mx-auto max-w-5xl overflow-hidden reveal">
             <div className="relative h-[420px] sm:h-[480px]">
               {t.galleryItems.map((item, index) => (
                 <article
@@ -623,7 +623,7 @@ export default function App() {
 
       <footer className="section-pad bg-teak-900 text-teak-100">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-4 reveal">
+          <div className="footer-card space-y-4 p-6 reveal">
             <div className="flex items-center gap-3">
               <img
                 src="/logo/khin-lay.jpeg"
@@ -635,7 +635,7 @@ export default function App() {
             <h3 className={`text-3xl text-gray ${displayFont}`}>{t.footerTitle}</h3>
             <p className="text-sm text-teak-200">{t.footerBody}</p>
           </div>
-          <div className="grid gap-4 text-sm text-teak-200 sm:grid-cols-2 reveal">
+          <div className="footer-card grid gap-4 p-6 text-sm text-teak-200 sm:grid-cols-2 reveal">
             <div>
               <p className="font-semibold text-gray">{t.contactLabel}</p>
               <p>+959254911866</p>
