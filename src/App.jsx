@@ -383,10 +383,10 @@ export default function App() {
         </div>
         <div className="hero-specials">
           {[
-            "/menu/rice-egg.jpeg",
-            "/menu/rice-pone-egg.jpeg",
-            "/menu/lat-phat.jpeg",
-            "/menu/duck-egg.jpeg"
+            "/menu/tgo-mhg-salad-fritter.jpeg",
+            "/menu/tgo-mhg-soup-fritter.jpeg",
+            "/menu/mix-noodle-salad.jpeg",
+            "/menu/tgo-tofu-salad.jpeg"
           ].map((src, index) => (
             <div key={src} className="hero-thumb">
               <img

@@ -559,18 +559,14 @@ export default function MenuSection({ lang = "my" }) {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {displayedMenu.map((item) => (
             <article key={`${item.name[lang]}-${item.price[lang]}`} className="menu-card reveal">
-              <div className="relative h-44 overflow-hidden rounded-2xl">
+              <div className="relative overflow-hidden rounded-2xl">
                 <img
                   src={item.image}
                   alt={item.name[lang]}
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient} mix-blend-multiply`}
-                />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                  <span className="badge">{item.spice[lang]}</span>
                   <span className="rating">{item.rating} ★</span>
                 </div>
               </div>

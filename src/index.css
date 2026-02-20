@@ -67,7 +67,12 @@ body {
 }
 
 .menu-card {
-  @apply flex h-full flex-col gap-6 rounded-3xl border border-teak-200/70 bg-[#fff4df]/85 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-glow;
+  @apply flex h-full flex-col gap-6 rounded-3xl border border-white/40 bg-white/25 p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-glow;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 20px 40px rgba(53, 39, 28, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .badge {
