@@ -512,6 +512,15 @@ export default function MenuSection({ lang = "my" }) {
 
   React.useEffect(() => {
     if (!menuOpen) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [menuOpen]);
+
+  React.useEffect(() => {
+    if (!menuOpen) return undefined;
     const handleKey = (event) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
@@ -555,6 +564,10 @@ export default function MenuSection({ lang = "my" }) {
             <button
               type="button"
               onClick={() => {
+                if (window.matchMedia("(max-width: 640px)").matches) {
+                  window.location.href = "/menu.html";
+                  return;
+                }
                 setMenuIndex(0);
                 setMenuOpen(true);
               }}

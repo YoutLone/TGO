@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KHIN LAY | Full Menu</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(248, 48, 48, 0.12), transparent 40%),
+          radial-gradient(circle at 85% 20%, rgba(42, 168, 129, 0.16), transparent 45%),
+          linear-gradient(180deg, #f9f1e4 0%, #f3e7d8 45%, #ead9c3 100%);
+        color: #3f2e1f;
+        overflow-y: auto;
+        min-height: 100%;
+      }
+      .page {
+        min-height: 100%;
+        display: block;
+        padding: 1.25rem 1.25rem 2rem;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .back {
+        border: 1px solid rgba(210, 186, 156, 0.6);
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 999px;
+        padding: 0.55rem 1rem;
+        font-size: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+      .cards {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .card {
+        position: relative;
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        padding: 0.75rem;
+        box-shadow: 0 20px 40px rgba(53, 39, 28, 0.18);
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        display: block;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <div class="top">
+        <div class="title">Full Menu</div>
+        <a class="back" href="index.html#menu">Back</a>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <img src="/gallery/menu-1.png" alt="KHIN LAY menu page 1" />
+        </div>
+        <div class="card">
+          <img src="/gallery/menu-2.png" alt="KHIN LAY menu page 2" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
