@@ -491,12 +491,15 @@ export default function MenuSection({ lang = "my" }) {
 
   const [activeFilter, setActiveFilter] = React.useState("all");
   const [showAll, setShowAll] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuIndex, setMenuIndex] = React.useState(0);
   const visibleMenu =
     activeFilter === "all"
       ? menuItems
       : menuItems.filter((item) => item.categoryKey === activeFilter);
   const displayedMenu = showAll ? visibleMenu : visibleMenu.slice(0, 9);
   const canToggle = visibleMenu.length > 9;
+  const menuImages = ["/gallery/menu-1.png", "/gallery/menu-2.png"];
 
   React.useEffect(() => {
     setShowAll(false);
@@ -507,6 +510,23 @@ export default function MenuSection({ lang = "my" }) {
     return cleanup;
   }, [lang, activeFilter, showAll]);
 
+  React.useEffect(() => {
+    if (!menuOpen) return undefined;
+    const handleKey = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        setMenuIndex((prev) => (prev - 1 + menuImages.length) % menuImages.length);
+      }
+      if (event.key === "ArrowRight") {
+        setMenuIndex((prev) => (prev + 1) % menuImages.length);
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, [menuOpen, menuImages.length]);
   return (
     <section id="menu" className="section-pad bg-sand-texture">
       <div className="mx-auto flex max-w-6xl flex-col gap-8">
@@ -533,6 +553,11 @@ export default function MenuSection({ lang = "my" }) {
           </div>
           {t.pdf ? (
             <button
+              type="button"
+              onClick={() => {
+                setMenuIndex(0);
+                setMenuOpen(true);
+              }}
               className={`self-center rounded-full border border-teak-300 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-teak-700 transition hover:-translate-y-0.5 sm:ml-auto sm:self-end sm:whitespace-nowrap ${
                 lang === "my" ? "px-4 py-2 text-xs tracking-[0.12em]" : ""
               }`}
@@ -598,6 +623,45 @@ export default function MenuSection({ lang = "my" }) {
           </div>
         )}
       </div>
+      {menuOpen ? (
+        <div className="menu-modal" role="dialog" aria-modal="true" aria-label={t.pdf}>
+          <button
+            type="button"
+            className="menu-modal-backdrop"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div className="menu-modal-card">
+            <div className="menu-modal-stage">
+              <button
+                type="button"
+                className="menu-modal-close"
+                aria-label="Close"
+                onClick={() => setMenuOpen(false)}
+              >
+                ✕
+              </button>
+              <img src={menuImages[menuIndex]} alt={`${t.pdf} ${menuIndex + 1}`} />
+              <button
+                type="button"
+                className="menu-modal-arrow menu-modal-arrow-left"
+                aria-label="Previous menu image"
+                onClick={() => setMenuIndex((prev) => (prev - 1 + menuImages.length) % menuImages.length)}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className="menu-modal-arrow menu-modal-arrow-right"
+                aria-label="Next menu image"
+                onClick={() => setMenuIndex((prev) => (prev + 1) % menuImages.length)}
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

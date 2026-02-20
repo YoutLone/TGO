@@ -7,7 +7,7 @@ const content = {
     languageLabel: "ဘာသာ",
     tag: "တောင်ငူမြို့ • မြန်မာရိုးရာအစားအစာ",
     heroTitle: "တောင်ငူ မုန့်ဟင်းခါး",
-    heroSubtitle: "\"ရိုးရာအနှစ်သာရကို အရင်းခံပြီး ခေတ်သစ်အရသာနဲ့အညီ ဖန်တီးထားပါသည်\"",
+    heroSubtitle: "\"ရိုးရာအနှစ်သာရကို အရင်းခံပြီး ခေတ်သစ်အရသာနဲ့အညီ\nဖန်တီးထားပါသည်\"",
     heroDescription:
       "\"တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ\"",
     reserveCta: "ကြိုတင်စာပွဲ ရယူရန်",
@@ -48,9 +48,9 @@ const content = {
       }
     ],
     gallery: [
-      { label: "မနက်စျေးကွက်", gradient: "from-jade-600/80 via-teak-400/80 to-lacquer-500/80" },
-      { label: "ဟင်းရည်အမှတ်တရ", gradient: "from-lacquer-600/80 via-teak-500/80 to-jade-500/80" },
-      { label: "လက်ဖက်အခမ်းအနား", gradient: "from-teak-600/80 via-jade-400/80 to-lacquer-400/80" }
+      { label: "မနက်စျေးကွက်", image: "/gallery/memory-2.jpeg" },
+      { label: "ဟင်းရည်အမှတ်တရ", image: "/gallery/memory-3.jpeg" },
+      { label: "လက်ဖက်အခမ်းအနား", image: "/gallery/memory-4.jpeg" }
     ],
     experienceTag: "အမှတ်တရ မြင်ကွင်းများနှင့် အခိုက်အတန့်များ",
     experienceTitle: "",
@@ -215,11 +215,24 @@ export default function App() {
   const [lang, setLang] = React.useState("my");
   const t = content[lang];
   const [galleryIndex, setGalleryIndex] = React.useState(0);
+  const heroMenuRef = React.useRef(null);
 
   React.useEffect(() => {
     const cleanup = setupScrollReveal(document);
     return cleanup;
   }, [lang]);
+
+  React.useEffect(() => {
+    const handleOutsideTap = (event) => {
+      const menu = heroMenuRef.current;
+      if (!menu?.open) return;
+      if (menu.contains(event.target)) return;
+      menu.removeAttribute("open");
+    };
+
+    document.addEventListener("pointerdown", handleOutsideTap);
+    return () => document.removeEventListener("pointerdown", handleOutsideTap);
+  }, []);
 
   React.useEffect(() => {
     if (!t.galleryItems?.length) return undefined;
@@ -268,7 +281,7 @@ export default function App() {
               EN
             </button>
           </div>
-          <details className="hero-top-menu">
+          <details className="hero-top-menu" ref={heroMenuRef}>
             <summary className="hero-top-menu-button" aria-label="Open menu">
               <span />
               <span />
@@ -317,11 +330,15 @@ export default function App() {
               >
                 {t.heroTitle}
                 <span
-                  className={`hero-subtitle mt-4 block text-lg text-lacquer-600 sm:mt-6 sm:text-2xl ${
+                  className={`hero-subtitle mt-4 block text-base text-lacquer-600 sm:mt-6 sm:text-2xl ${
                     lang === "my" ? "font-myanmar" : "font-display"
                   }`}
                 >
-                  {t.heroSubtitle}
+                  {t.heroSubtitle.split("\n").map((line, index) => (
+                    <span key={`${line}-${index}`} className={index === 0 ? "block" : "block mt-3"}>
+                      {line}
+                    </span>
+                  ))}
                 </span>
               </h1>
               <p
@@ -424,10 +441,11 @@ export default function App() {
             {t.gallery.map((item) => (
               <div
                 key={item.label}
-                className="glass-card reveal relative flex min-h-[220px] items-end overflow-hidden p-6 text-teak-900"
+                className="glass-card reveal relative flex min-h-[220px] items-end overflow-hidden text-white"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.45),transparent)]" />
-                <p className="relative text-lg font-semibold">{item.label}</p>
+                <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-teak-950/70 via-teak-900/30 to-transparent" />
+                <p className="relative p-6 text-lg font-semibold">{item.label}</p>
               </div>
             ))}
           </div>
