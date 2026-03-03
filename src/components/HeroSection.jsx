@@ -136,24 +136,6 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
               <p>{t.deliveryValue}</p>
             </div>
           </div>
-          <div
-            className="reveal hero-stagger hero-kpay-news w-full max-w-xl lg:max-w-[560px] lg:pr-20"
-            style={{ "--delay": "0.44s" }}
-          >
-            <div className="hero-kpay-news-track">
-              {[0, 1].map((item) => (
-                <div key={item} className="hero-kpay-news-item">
-                  <img
-                    src="/logo/k-pay.jpg"
-                    alt="K-Pay"
-                    className="h-8 w-8 shrink-0 rounded-lg object-cover sm:h-9 sm:w-9"
-                    loading="lazy"
-                  />
-                  <p className={`text-sm text-lacquer-700 sm:text-base ${displayFont}`}>{t.heroKpayCta}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
         <div className="relative lg:justify-self-end reveal-soft">
           <div className="hero-bowl-stage">
@@ -170,6 +152,24 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
           </div>
         </div>
       </div>
+          <div
+            className="reveal hero-stagger hero-kpay-news w-full max-w-xl lg:max-w-[560px] lg:pr-20"
+            style={{ "--delay": "0.44s" }}
+          >
+            <div className="hero-kpay-news-track">
+              {[0, 1].map((item) => (
+                <div key={item} className="hero-kpay-news-item">
+                  <img
+                    src="/logo/k-pay.jpg"
+                    alt="K-Pay"
+                    className="h-8 w-8 pt-1 shrink-0 rounded-lg object-cover sm:h-9 sm:w-9"
+                    loading="lazy"
+                  />
+                  <p className={`text-sm pt-3 text-lacquer-700 sm:text-base ${displayFont}`}>{t.heroKpayCta}</p>
+                </div>
+              ))}
+            </div>
+          </div>
       <div className="hero-specials">
         {[
           "/gallery/memory-1.jpeg",
