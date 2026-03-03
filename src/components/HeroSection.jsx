@@ -136,6 +136,36 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
               <p>{t.deliveryValue}</p>
             </div>
           </div>
+          <div
+            className="reveal hero-stagger"
+            style={{ "--delay": "0.52s" }}
+          >
+            {/* Desktop / tablet: ticker inline under details */}
+            <div className="hero-kpay-ticker overflow-hidden hidden sm:block">
+              <div className="hero-kpay-promo inline-flex items-center gap-3 text-sm">
+                <img
+                  src="/logo/k-pay.jpg"
+                  alt="K-Pay"
+                  className="h-8 w-8 shrink-0 rounded-md object-contain sm:h-9 sm:w-9"
+                />
+                <p className={`font-semibold text-lacquer-700 ${displayFont}`}>{t.heroKpayCta}</p>
+              </div>
+            </div>
+
+            {/* Mobile: previous card layout but animated text */}
+            <div className="sm:hidden">
+              <div className="hero-kpay-card hero-kpay-ticker overflow-hidden inline-flex w-full items-center gap-3 rounded-2xl border border-white/50 bg-white/20 px-4 py-3 text-sm backdrop-blur-sm">
+                <div className="hero-kpay-promo inline-flex items-center gap-3">
+                  <img
+                    src="/logo/k-pay.jpg"
+                    alt="K-Pay"
+                    className="h-10 w-10 shrink-0 rounded-xl object-contain shadow-soft"
+                  />
+                  <p className={`font-semibold text-lacquer-700 ${displayFont}`}>{t.heroKpayCta}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="relative lg:justify-self-end reveal-soft">
           <div className="hero-bowl-stage">

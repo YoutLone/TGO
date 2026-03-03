@@ -8,6 +8,8 @@ export const content = {
       "\"တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ\"",
     reserveCta: "ကြိုတင်စာပွဲ ရယူရန်",
     viewMenu: "မီနူးကြည့်ရန်",
+    heroKpayCta:
+      "လူကြီးမင်းတို့၏ K-Pay ငွေသွင်း၊ ငွေထုတ် ကိစ္စရပ်များကို ကျွန်ုပ်တို့ဆိုင်တွင် အဆင်ပြေချောမွေ့စွာ ဆောင်ရွက်နိုင်ပါသည်။",
     hoursLabel: "ဆိုင်ဖွင့်ချိန်",
     hoursValue: "မနက် 6:30 – ည 9:30",
     locationLabel: "ဆိုင်လိပ်စာ",
@@ -80,6 +82,9 @@ export const content = {
       "ယခုအချိန်မှာ ဖုန်းနဲ့သာ ကြိုတင်ချိန်းနိုင်ပါတယ်။ ဖုန်းခေါ်လိုက်တာနဲ့ အချိန်တိုအတွင်း အတည်ပြုပါမယ်။ လူနည်းအုပ်စုများအတွက် လက်ရှိအချိန်လာရောက်လည်း အဆင်ပြေပါတယ်။",
     callLabel: "ဖုန်းခေါ်ရန်",
     callCta: "ယခုဖုန်းခေါ်ရန်",
+    paymentTitle: "လွယ်ကူလျင်မြန်သော ဒီဂျစ်တယ်ငွေပေးချေမှုစနစ်။",
+    paymentBody:
+      "ကျွန်ုပ်တို့ဆိုင်တွင် အစားအသောက်သုံးဆောင်ပြီးနောက် ငွေပေးချေမှုများကို စိတ်တိုင်းကျ ဆောင်ရွက်နိုင်ရန် KBZPay ဖြင့် လက်ခံဆောင်ရွက်ပေးနေပါသည်။ ထို့အပြင် K-Pay ငွေသွင်း၊ ငွေထုတ် ဝန်ဆောင်မှုများကိုလည်း ဆိုင်တွင် တစ်ပါတည်း အဆင်ပြေချောမွေ့စွာ အသုံးပြုနိုင်ပါသည်။",
     formTag: "နမူနာဖောင်",
     formTitle: "အလွယ်တကူ ကြိုတင်ဖောင်",
     formPlaceholders: {
@@ -112,6 +117,8 @@ export const content = {
       "\"Inspired by Taungoo morning markets — fresh herbal notes, slow-simmered broths, and authentic Myanmar flavors presented with a modern touch.\"",
     reserveCta: "Reserve a Table",
     viewMenu: "View Menu",
+    heroKpayCta:
+      "K-Pay Transactions Made Easy: Cash-In and Cash-Out Available Here.",
     hoursLabel: "Open Hours",
     hoursValue: "6:30 AM – 9:30 PM",
     locationLabel: "Address",
@@ -182,6 +189,9 @@ export const content = {
       "For now, reservations are confirmed by phone. Call us and we will confirm in minutes. Walk-ins are welcome for small groups.",
     callLabel: "Call for booking",
     callCta: "Call Now",
+    paymentTitle: "Seamless Digital Payments.",
+    paymentBody:
+      "Enjoy a hassle-free dining experience with our integrated payment services. We proudly accept KBZPay for quick transactions, and we also offer convenient top-up and cash-out services right here at our restaurant.",
     formTag: "Sample form",
     formTitle: "Quick Reservation Request",
     formPlaceholders: {

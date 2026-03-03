@@ -21,6 +21,17 @@ export default function ReservationSection({ t, displayFont }) {
               {t.callCta}
             </a>
           </div>
+          <div className="glass p-6 flex flex-col sm:flex-row sm:items-start gap-4">
+            <img
+              src="/logo/k-pay.jpg"
+              alt="K-Pay"
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-contain shrink-0"
+            />
+            <div className="space-y-2">
+              <h3 className={`text-lg font-semibold text-teak-900 ${displayFont}`}>{t.paymentTitle}</h3>
+              <p className="text-sm text-teak-700">{t.paymentBody}</p>
+            </div>
+          </div>
         </div>
         <div className="glass p-6 sm:p-8 reveal">
           <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.formTag}</p>
