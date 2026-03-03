@@ -383,7 +383,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 2rem;
-  width: max-content;
+  width: 100px;
   white-space: nowrap;
   animation: hero-kpay-marquee 22s linear infinite;
 }
