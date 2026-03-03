@@ -152,12 +152,9 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
           </div>
         </div>
       </div>
-          <div
-            className="reveal hero-stagger hero-kpay-news w-full max-w-xl lg:max-w-[560px] lg:pr-20"
-            style={{ "--delay": "0.44s" }}
-          >
+          <div className="hero-kpay-outside hero-kpay-news w-full max-w-xl lg:max-w-[560px] lg:pr-20">
             <div className="hero-kpay-news-track">
-              {[0, 1].map((item) => (
+              {[0, 1, 2].map((item) => (
                 <div key={item} className="hero-kpay-news-item">
                   <img
                     src="/logo/k-pay.jpg"
