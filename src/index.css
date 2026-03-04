@@ -102,6 +102,27 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+.footer-social-link {
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #e8f0ff;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-1px);
+  background: rgba(24, 119, 242, 0.28);
+  border-color: rgba(24, 119, 242, 0.55);
+}
+
 .menu-modal {
   position: fixed;
   inset: 0;
@@ -264,6 +285,19 @@ body {
 
 .hero-subtitle {
   text-shadow: 0 1px 4px rgba(53, 39, 28, 0.18);
+}
+
+.hero-facebook-link {
+  border: 1px solid rgba(24, 119, 242, 0.45);
+  background: rgba(24, 119, 242, 0.12);
+  color: #1d4fbf;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-facebook-link:hover {
+  transform: translateY(-2px);
+  background: rgba(24, 119, 242, 0.2);
+  border-color: rgba(24, 119, 242, 0.65);
 }
 
 .hero-bowl-stage {
