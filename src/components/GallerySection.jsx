@@ -4,7 +4,10 @@ export default function GallerySection({ t, displayFont, galleryIndex, setGaller
   return (
     <section id="gallery" className="section-pad bg-sand-texture">
       <div className="mx-auto max-w-2xl text-center reveal">
-        <p className={`tag text-xl uppercase tracking-[0.35em] sm:text-2xl ${displayFont} mt-6`}>
+        <p
+          className={`tag mx-auto justify-center text-xl uppercase tracking-[0.35em] sm:text-2xl ${displayFont} mt-4`}
+          style={{ paddingTop: "1.5rem" }}
+        >
           {t.experienceTag}
         </p>
         {t.experienceTitle ? (
