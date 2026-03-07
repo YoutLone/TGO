@@ -3,7 +3,7 @@ export const content = {
     languageLabel: "ဘာသာ",
     tag: "တောင်ငူမြို့ • မြန်မာရိုးရာအစားအစာ",
     heroTitle: "တောင်ငူ မုန့်ဟင်းခါး",
-    heroSubtitle: "\"ရိုးရာအနှစ်သာရကို အရင်းခံပြီး ခေတ်သစ်အရသာနဲ့အညီ\nဖန်တီးထားပါသည်\"",
+    heroSubtitle: "\"ရိုးရာအနှစ်သာရကို အရင်းခံပြီး ခေတ်သစ်အရသာနဲ့ \nအညီဖန်တီးထားပါသည်\"",
     heroDescription:
       "\"တောင်ငူမြို့ရဲ့ နံနက်ခင်းဈေးတွေကနေ အစပြုလို့... လတ်ဆတ်တဲ့ ဆေးဘက်ဝင်အပင်နံ့သင်းသင်း၊ အချိန်အကြာကြီး တည်ထားတဲ့ ဟင်းရည်ချိုချိုနဲ့ ရိုးရာကို ခေတ်ပေါ်ဟန် ရောယှက်ထားတဲ့ မြန်မာ့အရသာ စစ်စစ်များ\"",
     reserveCta: "ကြိုတင်စာပွဲ ရယူရန်",
@@ -84,7 +84,7 @@ export const content = {
     callCta: "ယခုဖုန်းခေါ်ရန်",
     paymentTitle: "လွယ်ကူလျင်မြန်သော ဒီဂျစ်တယ်ငွေပေးချေမှုစနစ်။",
     paymentBody:
-      "ကျွန်ုပ်တို့ဆိုင်တွင် အစားအသောက်သုံးဆောင်ပြီးနောက် ငွေပေးချေမှုများကို စိတ်တိုင်းကျ ဆောင်ရွက်နိုင်ရန် KBZPay ဖြင့် လက်ခံဆောင်ရွက်ပေးနေပါသည်။ ထို့အပြင် K-Pay ငွေသွင်း၊ ငွေထုတ် ဝန်ဆောင်မှုများကိုလည်း ဆိုင်တွင် တစ်ပါတည်း အဆင်ပြေချောမွေ့စွာ အသုံးပြုနိုင်ပါသည်။",
+      "ကျွန်ုပ်တို့ဆိုင်တွင် အစားအသောက်သုံးဆောင်ပြီးနောက် ငွေပေးချေမှုများကို စိတ်တိုင်းကျ ဆောင်ရွက်နိုင်ရန် KBZPay, WavePay, CB Pay, MMQR ဖြင့် လက်ခံဆောင်ရွက်ပေးနေပါသည်။ ထို့အပြင် K-Pay ငွေသွင်း၊ ငွေထုတ် ဝန်ဆောင်မှုများကိုလည်း ဆိုင်တွင် တစ်ပါတည်း အဆင်ပြေချောမွေ့စွာ အသုံးပြုနိုင်ပါသည်။",
     formTag: "နမူနာဖောင်",
     formTitle: "အလွယ်တကူ ကြိုတင်ဖောင်",
     formPlaceholders: {
@@ -191,7 +191,7 @@ export const content = {
     callCta: "Call Now",
     paymentTitle: "Seamless Digital Payments.",
     paymentBody:
-      "Enjoy a hassle-free dining experience with our integrated payment services. We proudly accept KBZPay for quick transactions, and we also offer convenient top-up and cash-out services right here at our restaurant.",
+      "Enjoy a hassle-free dining experience with our integrated payment services. We proudly accept KBZPay, WavePay, CB Pay, MMQR for quick transactions, and we also offer convenient top-up and cash-out services right here at our restaurant.",
     formTag: "Sample form",
     formTitle: "Quick Reservation Request",
     formPlaceholders: {
