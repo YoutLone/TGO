@@ -157,7 +157,7 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
             <div className="hero-bowl-ring" aria-hidden="true" />
             <div className="hero-bowl">
               <img
-                src="/logo/noodle.jpg"
+                src="/logo/noodle.jpeg"
                 alt="KHIN LAY signature dish"
                 className="h-full w-full object-cover"
                 loading="lazy"
