@@ -119,7 +119,7 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
               {t.viewMenu}
             </a>
             <a
-              href="https://www.facebook.com/share/1CE7iubnkG/?mibextid=wwXIfr"
+              href="https://www.facebook.com/khinlaytaungoomohinga"
               target="_blank"
               rel="noreferrer"
               className="hero-facebook-link w-full rounded-full px-6 py-3 text-center text-sm font-semibold uppercase tracking-wide sm:w-auto"
