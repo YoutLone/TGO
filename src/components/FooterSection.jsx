@@ -20,7 +20,7 @@ export default function FooterSection({ t, displayFont }) {
           <div>
             <p className="font-semibold text-gray">{t.contactLabel}</p>
             <p>+959254911866</p>
-            <p>hello@khinlay.mm</p>
+            <p>sithuaung491971@gmail.com</p>
             <a
               href="https://www.facebook.com/share/1CE7iubnkG/?mibextid=wwXIfr"
               target="_blank"

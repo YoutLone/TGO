@@ -31,7 +31,12 @@ export default function GallerySection({ t, displayFont, galleryIndex, setGaller
                       : "translate-x-8 opacity-0"
                 }`}
               >
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover" loading="lazy" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-full w-full object-cover object-center block"
+                  loading="lazy"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-teak-950/70 via-teak-900/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <p className="text-xs uppercase tracking-[0.3em] text-white/70">{t.experienceTag}</p>

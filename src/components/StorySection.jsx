@@ -26,7 +26,11 @@ export default function StorySection({ t, displayFont }) {
               key={item.label}
               className="glass-card reveal relative flex min-h-[220px] items-end overflow-hidden text-white"
             >
-              <img src={item.image} alt={item.label} className="absolute inset-0 h-full w-full object-cover" />
+              <img
+                src={item.image}
+                alt={item.label}
+                className="absolute inset-0 h-full w-full object-cover object-center block"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-teak-950/70 via-teak-900/30 to-transparent" />
               <p className="relative p-6 text-lg font-semibold">{item.label}</p>
             </div>

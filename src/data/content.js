@@ -74,6 +74,11 @@ export const content = {
         title: "သန့်ရှင်းအေးချမ်းတဲ့ ဆိုင်ပတ်ဝန်းကျင်နဲ့ စားပွဲများ",
         caption: "နွေးထွေးတဲ့ အလင်းရောင်နဲ့ အတူစားသောက်ခြင်း။",
         image: "/gallery/memory-4.jpeg"
+      },
+      {
+        title: "Grab Rider အမှတ်တရ",
+        caption: "Grab Rider နဲ့အတူ အမှတ်တရအချိန်လေး။",
+        image: "/gallery/memory-5.jpeg"
       }
     ],
     reservationTag: "ကြိုတင်ချိန်းဆိုမှု",
@@ -181,6 +186,11 @@ export const content = {
         title: "Tea Leaf Ritual",
         caption: "A Taungoo favorite, prepared tableside.",
         image: "/gallery/memory-4.jpeg"
+      },
+      {
+        title: "Grab Rider Memory",
+        caption: "Moments with our Grab Rider service.",
+        image: "/gallery/memory-5.jpeg"
       }
     ],
     reservationTag: "Reservation",
