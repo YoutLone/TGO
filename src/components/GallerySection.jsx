@@ -19,7 +19,7 @@ export default function GallerySection({ t, displayFont, galleryIndex, setGaller
       </div>
       <div className="mt-10">
         <div className="glass-card relative mx-auto max-w-5xl overflow-hidden reveal">
-          <div className="relative h-[420px] sm:h-[480px]">
+          <div className="relative h-[460px] sm:h-[560px] lg:h-[580px] xl:h-[640px]">
             {t.galleryItems.map((item, index) => (
               <article
                 key={item.title}
