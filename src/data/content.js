@@ -16,7 +16,7 @@ export const content = {
     locationValue:
       "မဟာဗန္ဓုလလမ်းထောင့်နှင့် မင်းရဲကျော်စွာလမ်းမကြီးပေါ် မြောက်ဒဂုံမြို့နယ် ၊ ရန်ကုန်။",
     deliveryLabel: "ပို့ဆောင်မှု",
-    deliveryValue: "၅ ကီလိုမီတာအတွင်း ရရှိနိုင်",
+    deliveryValue: "ရန်ကုန်မြို့အတွင်း ပို့ဆောင်နိုင်သည်",
     featuredLabel: "အထူးမီနူး",
     featuredTitle: "မုန့်ဟင်းခါး ပန်းကန်",
     featuredDesc: "ငါးရည်ကို အချိန်ကြာကြာချက်ပြီး ကြော်ဖက်၊ အစိမ်းရနံ့နဲ့ အနူးညံ့အရသာ။",
@@ -129,7 +129,7 @@ export const content = {
     locationLabel: "Address",
     locationValue: "Corner of Maha Bandula St. & Min Yey Kyaw Swa Rd., North Dagon, Yangon",
     deliveryLabel: "Delivery",
-    deliveryValue: "Available within 5 km",
+    deliveryValue: "Available within Yangon",
     featuredLabel: "Featured",
     featuredTitle: "Mohinga Signature Bowl",
     featuredDesc: "Slow-cooked fish broth with crispy fritters and fragrant herbs.",

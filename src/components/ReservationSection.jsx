@@ -6,7 +6,7 @@ export default function ReservationSection({ t, displayFont }) {
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6 text-center sm:text-left">
           <p className="tag mb-3">{t.reservationTag}</p>
-          <h2 className={`text-3xl text-teak-900 sm:text-4xl ${displayFont}`}>
+          <h2 className={`text-lg text-teak-900 sm:text-4xl ${displayFont}`}>
             {t.reservationTitle}
           </h2>
           <p className="max-w-xl text-teak-700">{t.reservationBody}</p>
@@ -21,7 +21,7 @@ export default function ReservationSection({ t, displayFont }) {
               {t.callCta}
             </a>
           </div>
-          <div className="glass p-6 flex flex-col sm:flex-row sm:items-start gap-4">
+          <div className="glass p-6 flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
             <img
               src="/logo/k-pay.jpg"
               alt="K-Pay"
@@ -35,7 +35,7 @@ export default function ReservationSection({ t, displayFont }) {
         </div>
         <div className="glass p-6 sm:p-8 reveal">
           <p className="text-xs uppercase tracking-[0.3em] text-teak-500">{t.formTag}</p>
-          <h3 className={`mt-4 text-2xl text-teak-900 ${displayFont}`}>{t.formTitle}</h3>
+          <h3 className={`mt-4 text-lg text-teak-900 text-center sm:text-left ${displayFont}`}>{t.formTitle}</h3>
           <form className="mt-6 grid gap-4 text-sm text-teak-700">
             <input
               className="rounded-2xl border border-teak-200 bg-white/80 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-lacquer-300"
@@ -78,7 +78,7 @@ export default function ReservationSection({ t, displayFont }) {
             >
               {t.formSubmit}
             </button>
-            <p className="text-xs text-teak-500">{t.formHint}</p>
+            <p className="text-xs font-semibold text-red-600">{t.formHint}</p>
           </form>
         </div>
       </div>

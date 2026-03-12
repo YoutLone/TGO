@@ -147,7 +147,15 @@ export default function HeroSection({ t, lang, setLang, displayFont, heroMenuRef
             </div>
             <div>
               <p className="font-semibold text-teak-800">{t.deliveryLabel}</p>
-              <p>{t.deliveryValue}</p>
+              <div className="mt-2 flex items-center gap-2">
+                <img
+                  src="/logo/grab.jpg"
+                  alt="Grab"
+                  className="h-6 w-6 rounded-md object-cover"
+                  loading="lazy"
+                />
+                <p>{t.deliveryValue}</p>
+              </div>
             </div>
           </div>
         </div>
